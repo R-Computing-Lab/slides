@@ -1,10 +1,7 @@
 # Slides
 
-This outline is a work in progress.
+This collection of slides contain the vast majority of my xaringan slides.
 
-## Outline
-
-The course is divided into three parts. Part 1 is on exploratory data analysis, part 2 is making rigorous conclusions via statistical tools like modeling and inference, and part 3 includes topics that are designed to inspire students to learn more data science and statistics.
 
 ## Toolkit
 
