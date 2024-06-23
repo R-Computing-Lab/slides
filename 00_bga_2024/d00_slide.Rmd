@@ -13,9 +13,7 @@ output:
       highlightStyle: solarized-light
       countIncrementalSlides: false
 #      slideNumberFormat: ""
-bibliography: "../book.bib"
-biblio-style: apalike
-link-citations: yes
+
 ---
 
 ```{r child = "../setup.Rmd"}
@@ -44,12 +42,12 @@ class: middle
 
 ```{r echo=FALSE,out.width="10%",fig.align='center',fig.cap="QR code for these slides",fig.height=3}
 library(qrcode)
-code <- qr_code("https://datascience4psych.github.io/slides/00_dataatlas/d00_slide#1")
+code <- qr_code("https://r-computing-lab.github.io/slides/00_bga_2024/d00_slide.html#1")
 plot(code)
 ```
 
 .footnote[.center[
-[DataScience4Psych.github.io/slides/00_ASU/d00_slide](https://datascience4psych.github.io/slides/00_dataatlas/d00_slide#1) 
+[r-computing-lab.github.io/slides/00_bga_2024/d00_slide](https://r-computing-lab.github.io/slides/00_bga_2024/d00_slide.html#1) 
 ]
 ]
 
@@ -79,21 +77,28 @@ I could have spent this talk showing you some of the cool visualizations I've ma
 
 # Like This One
 
-
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
+.pull-left.center[
+<br>
+<br>
+```{r, echo=FALSE, out.width="99%", fig.align='center'}
 knitr::include_graphics("img/X chroms.png")
 ```
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics("img/mtdna.png")
 ```
+]
 
 ---
 
 # Or these!
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-#knitr::include_graphics("path_diagram_image_url")
+```{r, echo=FALSE, out.width="60%", fig.align='center'}
+knitr::include_graphics("img/upsidedownplots.png")
 ```
+
 
 ---
 
@@ -101,9 +106,23 @@ knitr::include_graphics("img/mtdna.png")
 
 That's extremely promising for making much better pedigrees plots...
 
-But... well... It's not what I'm going to do today.
+```{r, echo=FALSE, out.width="50%", fig.align='center'}
+knitr::include_graphics("img/upsidedownplots.png")
+```
+.footnote[.center[
+[x.com/SMasonGarrison/status/1800222792933310619](https://x.com/SMasonGarrison/status/1800222792933310619) 
+]
+]
 
---
+---
+
+# Not today!
+
+
+```{r, echo=FALSE, out.width="50%", fig.align='center'}
+knitr::include_graphics("img/nottoday.jpg")
+```
+
 
 But I decided to focus on the history of data visualization in behavior genetics. I'll show you some of the cool visualizations I've made in the workshop.
 
@@ -120,10 +139,10 @@ class: middle
 - Enabled the visualization of complex genetic interactions and pathways.
 - Revolutionized genetic research by providing a clear, visual method for understanding heritability and genetic correlations.
 
----
+--
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center'}
-#knitr::include_graphics("path_diagram_image_url")
+knitr::include_graphics("img/Wright20aFigure5_1.jpg")
 ```
 
 <!-- Slide 3: Historical Context (1 minute) -->
@@ -131,13 +150,29 @@ class: middle
 
 --- 
 
+# But that's... cliché. Let's see some other examples from Sewall Wright's work.
+
+--
+
+```{r, echo=FALSE, out.width="70%", fig.align='center'}
+knitr::include_graphics("img/googlesearch.png")
+```
+
+---
+<!-- Slide 4: Wright's Adaptive Landscape Diagram (2 minutes) 
+This chapter traces the origins and conceptual lineages of the adaptive landscape concept and its representations. While Armand Janet's 1895 concept arguably marks the origin of the adaptive landscape concept and even its graphic representation, Janet's concept had very limited impact when compared to Sewall Wright's concept from 1932. As part of his effort to reconcile Mendelian genetics and Darwinian evolution in his shifting balance theory, Wright offered the metaphor of the adaptive landscape and its topographic representation as a way of depicting the effect of variations in population size, migration, and the strength of selection. Wright's genetic version of the adaptive landscape inspired other versions of the adaptive landscape based on phenotypic changes and on molecular changes. As a result, the history of the adaptive landscape is described in terms of three lineages based on the material basis of the adaptive landscape: the genetic landscape, the phenotypic landscape, and the molecular landscape.
+-->
+
 ## Sewall Wright's 1932 Adaptive Landscape Diagram
 
 .pull-left-narrow[
-- Wright's adaptive landscape diagram was a groundbreaking visualization of evolutionary processes.
-- Depicted the relationship between genetic variation and fitness.
-- Provided a visual representation of natural selection and evolutionary dynamics.
-.footnote[CITE HERE]
+- Wright's adaptive landscape diagram was an attemptt to reconcile Mendelian genetics and Darwinian evolution. (Shifting Balance Theory)
+- Offered a metaphor of the adaptive landscape and its topographic representation.
+- Depicted the effect of variations in population size, migration, and the strength of selection.
+- Other versions of the adaptive landscape were inspired by Wright's original diagram.
+- (Ok technically Armand Janet's conceptualized this in 1895, but Wright's concept had a much larger impact.)
+]
+.footnote[]
 ]
 
 .pull-right-wide[
@@ -149,6 +184,7 @@ knitr::include_graphics("img/wright6panel.png")
 <!-- Script: Wright's adaptive landscape diagram was another groundbreaking visualization, depicting the relationship between genetic variation and fitness. This provided a visual representation of natural selection and evolutionary dynamics. -->
 
 ---
+
 # Four adaptive landscape diagrams
 .pull-left[
 - Various adaptations and critiques of Wright's original diagram.
@@ -166,10 +202,14 @@ knitr::include_graphics("img/responses towright.png")
 .footnote[Credit: Panel from @Skipper_2004]
 
 <!-- Four adaptive landscape diagrams, resulting from critiques of Wright's Reference Wright1932 diagram. Fig. 2a is Ridley's (Reference Ridley1996, 219) depiction of a Fisherian landscape. Fig. 2b is Gavrilets’ (Reference Gavrilets1997, 309) depiction of the holey landscape. Fig. 2c is Coyne et al.'s (Reference Coyne, Barton and Turelli1997, 647) simplified Wrightian landscape. Fig. 2d is the Kauffman and Levin (Reference Kauffman and Levin1987, 33) rugged adaptive landscape. -->
+
+---
+
+# Fast Forward to the Present
+
 ---
 
 # Modern Techniques
-
 
 ## Modern Path Diagrams
 
@@ -183,24 +223,18 @@ knitr::include_graphics("img/responses towright.png")
 
 # Classic path diagrams can start to resemble the wiring of a computer or a military aircraft.
 
-# Bomber
 
+.pull-left[
 ```{r, echo=FALSE, out.width="70%", fig.align='center'}
-#knitr::include_graphics("path_diagram_image_url")
+knitr::include_graphics("img/NTFD.path.diagram.png")
 ```   
-
-# Cute little path diagram
-
+]
+.pull-right[
 ```{r, echo=FALSE, out.width="70%", fig.align='center'}
 knitr::include_graphics("img/cutepath.png")
 ```
+]
 ---
-
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-#knitr::include_graphics("manhattan_plot_image_url")
-```
-
---- 
 
 ### Manhattan Plots
 
@@ -211,6 +245,12 @@ knitr::include_graphics("img/cutepath.png")
 
 <!-- Slide 4: Modern Techniques (1 minute) -->
 <!-- Script: Moving to modern times, the Manhattan Plot has become a staple in genetic research, particularly for genome-wide association studies (GWAS). These plots help researchers identify significant genetic variants by visualizing p-values across the genome, making it easier to spot areas of interest. -->
+
+--
+
+```{r, echo=FALSE, out.width="70%", fig.align='center'}
+knitr::include_graphics("img/Genomic data in the All of Us Research Program_manhattan.jpg")
+```
 
 ---
 
@@ -256,7 +296,16 @@ knitr::include_graphics("img/Genomic data in the All of Us Research Program.jpg"
 - Includes examples of various types of plots and when to use them.
 - Aims to standardize and improve the quality of visualizations in behavior genetics.
 - Provides practical tips and best practices for creating clear and informative plots.
+```{r echo=FALSE,out.width="10%",fig.align='center',fig.cap="QR code for the atlas",fig.height=3}
+library(qrcode)
+code <- qr_code("https://r-computing-lab.github.io/data-atlas/")
+plot(code)
+```
 
+.footnote[.center[
+[r-computing-lab.github.io/data-atlas/](https://r-computing-lab.github.io/data-atlas/) 
+]
+]
 <!-- Slide 5: Developing Resources - Atlas (1 minute) -->
 <!-- Script: To support researchers in choosing the most appropriate visualization techniques, we are developing an atlas using `ggplot2` in R. This resource aims to guide researchers through the process of selecting and implementing visualizations that enhance the clarity and interpretability of their data. -->
 
@@ -265,9 +314,8 @@ knitr::include_graphics("img/Genomic data in the All of Us Research Program.jpg"
 ## Proposed R Package
 
 Integration with `OpenMx`:
-- Streamlines the creation of visualizations for structural equation modeling (SEM) and other complex analyses.
-- Provides functions for creating path diagrams, correlation matrices, and other visualizations compatible with OpenMx.
-- Simplifies the process of generating high-quality visualizations from complex genetic data.
+- Streamlines the creation of visualizations for structural equation modeling (SEM) and other complex analyses. (Probably attempting to generalize `DiagrammeR` to works beyond RAM models)
+- Provides functions for creating path diagrams, correlation matrices, and other visualizations compatible with the data structures used in `OpenMx`.
 - Aims to make advanced visualization tools more accessible to researchers in behavior genetics.
 
 <!-- Slide 6: Developing Resources - R Package (1 minute) -->
@@ -275,26 +323,17 @@ Integration with `OpenMx`:
 
 ---
 
-# Practical Advice
-
-### Effective Visualizations
-
-- Path Diagrams
-- Family Trees
-- Interaction Visualizations
-
-<!-- Slide 7: Practical Advice (2 minutes) -->
-<!-- Script: Let me share some practical advice on using visualizations effectively in your research. Path diagrams are excellent for illustrating relationships between variables. Family trees can help visualize inheritance patterns across generations. Interaction visualizations can reveal how different genetic and environmental factors interact to influence traits. By using these techniques, we can improve the clarity and interpretability of our genetic data. -->
-
----
-
 # Democratizing Visualization Tools
 
-### Making Advanced Tools Accessible
+.pull-left[
+### Making Advanced Scripts Accessible
 
 - Open-source resources: Free and available to the entire research community.
 - User-friendly packages: Simplify the process of creating high-quality visualizations.
-- Educational materials: Provide guidance and training for researchers at all levels.
+- Educational materials: Provide guidance and training for researchers at all levels. Designed to complement what is already available from IBG and openMx and my own Data Science Materials.
+]
+--
+.pull-right[
 
 ### Benefits:
 
@@ -304,12 +343,12 @@ Integration with `OpenMx`:
 
 <!-- Slide 8: Democratizing Visualization Tools (1 minute) -->
 <!-- Script: One of our key goals is to democratize access to advanced visualization tools. By providing open-source resources and easy-to-use packages, we hope to make these powerful techniques accessible to the entire behavior genetics community, thus amplifying the impact of our research. -->
-
+]
 ---
 
 # Goals of the Initiative
 
-- Improve clarity and interpretability of genetic data.
+- Improve clarity and aestics of genetic research visualizations.
 - Amplify the reach and impact of behavior genetics research.
 - Support the behavior genetics community with better tools and resources.
 
@@ -349,12 +388,12 @@ Feel free to ask any questions now, or reach out to me after the talk via email 
 
 ```{r qr_ds4p, echo=FALSE, fig.align = "center", out.width = "30%", caption="Scan the QR code to visit the Data Atlas"}
 library(qrcode)
-code <- qr_code("https://DataScience4Psych.github.io/DataScience4Psych/")
+code <- qr_code("https://r-computing-lab.github.io/data-atlas/")
 plot(code)
 ```
 
 .footnote[.center[
-[DataScience4Psych.github.io/DataScience4Psych/](https://DataScience4Psych.github.io/DataScience4Psych/) 
+[r-computing-lab.github.io/data-atlas/](https://r-computing-lab.github.io/data-atlas/) 
 ]
 ]
 <!-- Slide 11: Questions (1 minute) -->
