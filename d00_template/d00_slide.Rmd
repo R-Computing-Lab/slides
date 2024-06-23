@@ -1,0 +1,511 @@
+---
+title: "Title Line 1 <br> `r emo::ji('cat')`<br> Title Line 2"
+author: "S. Mason Garrison"
+output:
+  xaringan::moon_reader:
+    css: "../slides.css"
+    lib_dir: libs
+    self_contained: TRUE
+    nature:
+      ratio: "16:9"
+      highlightLines: true
+      highlightStyle: solarized-light
+      countIncrementalSlides: false
+#      slideNumberFormat: ""
+---
+
+```{r child = "../setup.Rmd"}
+```
+
+```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
+# Remember to compile
+#xaringan::inf_mr(cast_from = "..")
+#       slideNumberFormat: ""  
+knitr::opts_chunk$set(knitr.duplicate.label = "allow")
+library(tidyverse)
+if (!require("emo")) devtools::install_github("hadley/emo")
+library(emo)
+```
+
+---
+
+class: middle
+
+# Title Slides
+
+---
+
+
+## Main Title Slide: Introduce the presentation.
+---
+## Section Title Slide: Introduce a new section or topic.
+
+---
+## Subsection Title Slide: Introduce a new subsection or subtopic.
+---
+
+class: middle
+# Introduction Slides
+
+---
+
+Overview Slide: Provide a high-level summary of the presentation.
+Objectives Slide: State the goals or objectives of the presentation.
+
+
+---
+
+# Welcome to [Course/Topic Name]
+
+<br> `r emo::ji('cat')`<br>
+
+.large[
+Welcome to our journey through [Course/Topic Name]. We'll explore together, learn, and grow.
+]
+
+
+---
+
+# Content Slides: Text
+
+---
+# Simple Text Slide: Present a single concept or statement.
+---
+
+# Simple Text Slide
+
+Present a single concept or statement.
+
+---
+# Bullet Points Slide: List key points or ideas.
+---
+## Simple Bullet Points
+- Interactive
+  - Some lectures, lots of learn-by-doing
+- Meet twice a week 
+	- Tuesday are Face-to-Face Tutorials
+	- Thursdays are Solidarity Sessions
+- Bring your laptop! `r emo::ji('computer')`
+- Flipped Lectures
+	- Pre-recorded Lectures
+	- Module is finalized by the week's start
+---
+
+## Dynamic Bullet Points
+- Interactive
+  - Some lectures, lots of learn-by-doing
+--
+
+- Meet twice a week 
+	- Tuesday are Face-to-Face Tutorials
+	- Thursdays are Solidarity Sessions
+--
+
+- Bring your laptop! `r emo::ji('computer')`
+
+--
+- Flipped Lectures
+	- Pre-recorded Lectures
+	- Module is finalized by the week's start
+---
+
+
+
+## Numbered List Slide: List items in a specific order.
+---
+## Quote Slide: Highlight a significant quote or statement.
+
+---
+
+## Quote Slide
+
+.large[QUOTE TEXT HERE]
+
+.small[AUTHOR NAME, [SOURCE](https://www.yourlink.com "Source")]
+
+---
+class: middle
+
+# More Complicated Slides
+
+---
+
+## Your turn
+
+---
+
+.your-turn[
+
+**Option 1.**
+
+- On Github, download the assignment called `AE01a - UN Votes`.
+- In the Files pane in the bottom right corner, spot the file called `unvotes.Rmd`. Open it, and then click on the "Knit" button.
+- Go back to the file and change your name on top (in the `yaml` -- we'll talk about what this means later) and knit again.
+- Change the country names to those you're interested in. Your spelling and capitalization should match how the countries appear in the data, so take a peek at the Appendix to confirm spelling. Knit again. Voila, your first data visualization!
+
+]
+
+---
+
+## Question Slide: Pose a question to the audience.
+
+---
+
+.question[
+What does it mean for a data analysis to be "reproducible"?
+]
+
+--
+
+Near-term goals:
+
+- Are the tables and figures reproducible from the code and data?
+- Does the code actually do what you think it does?
+- In addition to what was done, is it clear **why** it was done? 
+(e.g., how were parameter settings chosen?)
+
+Long-term goals:
+
+- Can the code be used for other data?
+- Can you extend the code to do other things?
+
+---
+
+## Tip Slide: Share a helpful tip or suggestion.
+---
+
+
+# Tip Slide
+
+.small[
+.instructions[
+Go to [your_instruction_link](https://yourlinkhere.com/), and perform the action (unless you already have done so). 
+]
+]
+
+.large[Tips for __________:<sup>✦</sup>]
+
+--
+- Tip 1 with your content.
+
+--
+- Tip 2 with your content.
+--
+
+- Tip 3 with your content.
+- More tips as needed.
+
+
+--
+.small[ 
+<sup>✦</sup> Source: [Your Source Name](http://yoursourceurl.com) by Author/Creator Name
+]
+
+
+
+---
+## What is data science?
+
+- <i class="fa fa-database fa"></i> + <i class="fa fa-flask fa"></i> = data science?
+--
+
+- <i class="fa fa-database fa"></i> + <i class="fa fa-code fa"></i> = data science?
+--
+
+- <i class="fa fa-database fa"></i> + <i class="fa fa-user fa"></i> + <i class="fa fa-code fa"></i> = data science?
+--
+
+- <i class="fa fa-database fa"></i> + <i class="fa fa-users fa"></i> + <i class="fa fa-code fa"></i> = data science?
+--
+
+<br>
+<br>
+.large[
+Data science is an exciting discipline that allows you to turn raw data into understanding, insight, and knowledge. We're going to learn to do this in a `tidy` way -- more on that later!
+]
+---
+
+
+## Nested subpoints
+
+.pull-left-narrow[
+.xlarge[
++ Point 1 <br><br>
++ Point 2 <br><br>
++ Point 3 <br><br>
+]
+]
+.pull-right-wide[
+.white[.]  
+<br>
+{{content}}
+]
+
+--
++ Subpoint 1
+  + Detail 1
+<br><br>
+{{content}}
+
+--
++ Subpoint 2
+  + Detail 2
+<br><br>
+{{content}}
+
+--
++ Subpoint 3
+  + Detail 3
+<br><br>
+{{content}}
+
+---
+
+
+class: middle
+
+# Visual Slides
+---
+
+Image Slide: Display an image prominently.
+
+---
+
+# Image Slide full scale external
+
+![Image Description](https://datascience4psych.github.io/DataScience4Psych/assets/logo.png)
+
+---
+
+# Image Slide full scale internal
+![Image Description](img/logo.png)
+
+---
+
+## Let's take a tour - R / RStudio
+
+.center[
+![](img/logo.png)
+]
+
+- Console
+- Using R as a calculator
+- Environment
+- Loading and viewing a data frame
+- Accessing a variable in a data frame
+- R functions
+
+
+---
+## Image with Caption Slide: Display an image with an explanatory caption.
+---
+
+```{r fig.align="center", echo=FALSE, alt="Punctuation", out.width="45%"}
+knitr::include_graphics("img/logo.png")
+```
+
+.footnote[Credit: AUTHOR AUTHOR, [url](https://www.yourlink.com "Source")]
+---
+
+
+Side-by-Side Image and Text Slide: Present an image alongside descriptive text.
+---
+
+## Side-by-Side Image and Text
+
+.pull-left[
+```{r fig.align="center", echo=FALSE}
+knitr::include_graphics("img/logo.png")
+```
+]
+.pull-right[
+Your text here.
+]
+---
+
+## Side-by-Side Text and Image
+.pull-left[
+Your text here.
+]
+.pull-right[
+```{r fig.align="center", echo=FALSE}
+knitr::include_graphics("img/logo.png")
+```
+]
+
+---
+
+Full-Width Image Slide: Use an image as the background for the slide.
+---
+
+
+
+
+
+# Data Slides
+
+---
+
+# Simple Chart Slide: Display a chart or graph.
+---
+# Complex Data Visualization Slide: Present detailed data visualizations.
+---
+# Table Slide: Display tabular data.
+---
+Infographic Slide: Use graphics to represent data visually.
+
+
+---
+
+class: middle, center
+
+# Code Slides
+
+---
+Code Chunk Slide: Display a block of code.
+---
+
+## Code Chunk Slide with commentary
+
+---
+## Working with R at the command line (pt 2)
+
+- Go into the Console, where we interact with the live R process.
+- Make an assignment and then inspect the object you just created:
+
+```{r start_rbasics}
+x <- 3 * 4
+x
+```
+
+
+---
+
+Code with Output Slide: Show code alongside its output.
+---
+
+class: middle, inverse
+
+# Interactive Slides
+
+---
+
+FAQ Slide: Answer common questions.
+---
+
+Interactive Poll Slide: Engage the audience with a poll.
+---
+Think-Pair-Share Slide: Encourage audience participation.
+---
+
+Link Slide: Provide important links or resources.
+
+---
+
+
+## Q&A Slide: Allow for audience questions.
+
+---
+
+# What is this course?
+
+This course is an introduction to data science that is designed for psychologists. It emphasizes statistical thinking and best practices.
+<br><br>
+--
+
+**Q - What data science background does this course assume?**  
+A - None.
+<br>
+--
+
+**Q - Is this an intro CS course?**  
+A - Although statistics and computer science $\ne$ data science, they are very closely related and have tremendous of overlap. Hence, this course is a great way to get comfortable with those topics. However this course is **not** your typical course.
+<br>
+--
+
+**Q - Will we be doing computing?**   
+A - Yes.
+<br>
+--
+
+
+**Q - What computing language will we learn?**  
+A - R.
+<br>
+--
+
+**Q: Why not language X?**  
+A: We can discuss that *remotely* over `r emo::ji("coffee")`.
+
+---
+
+# Discussion Slide: Facilitate a group discussion.
+
+---
+
+## Let's Discuss
+
+- What is your understanding of [Topic/Question]?
+--
+
+- How do you see [Topic/Question] applying to your work/life?
+
+.large[
+Feel free to share your thoughts and questions.
+]
+
+---
+
+class: middle
+
+# Custom Background Slides
+
+---
+
+Custom Background with Text: Add text over a custom background.
+---
+
+Custom Background with Data Visualization: Display data visualizations over a custom background.
+
+---
+
+class: middle
+
+Summary and Conclusion Slides
+
+---
+
+
+Summary Slide: Summarize key points.
+---
+Conclusion Slide: Provide final thoughts or a call to action.
+
+---
+Next Steps Slide: Outline next steps or actions to be taken.
+
+---
+
+class: middle
+# Contact Information Slides
+
+---
+
+## Contact Information Slide: Share contact details for follow-up.
+
+---
+
+## Contact Information
+
+- Email: _garrissm@wfu.edu_
+- Website: [smasongarrison.com](https://www.smasongarrison.com)
+- Twitter: [@smasongarrison](https://twitter.com/smasongarrison)
+- GitHub: [github.com/smasongarrison](https://github.com/smasongarrison)
+- YouTube: [youtube.com/smasongarrison](https://youtube.com/smasongarrison)
+
+```{r qrcode, echo=FALSE, fig.align = "center", out.width = "30%", caption="Scan the QR code to visit the Data Science for Psych website"}
+
+library(qrcode)
+code <- qr_code("https://DataScience4Psych.github.io/DataScience4Psych/")
+plot(code)
+```
+
