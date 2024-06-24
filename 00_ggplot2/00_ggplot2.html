@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Visualizing data with ggplot2  🎨</title>
+    <title>Visualizing data with ggplot2  👨‍🎨</title>
     <meta charset="utf-8" />
     <meta name="author" content="S. Mason Garrison" />
     <script src="libs/header-attrs/header-attrs.js"></script>
@@ -14,7 +14,7 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Visualizing data with ggplot2<br> 🎨
+# Visualizing data with ggplot2<br> 👨‍🎨
 ]
 .author[
 ### S. Mason Garrison
@@ -30,7 +30,7 @@ layout: true
   
 &lt;div class="my-footer"&gt;
 &lt;span&gt;
-&lt;a href="https://DataScience4Psych.github.io/DataScience4Psych/" target="_blank"&gt;Data Science for Psychologists&lt;/a&gt;
+&lt;a href="https://DataScience4Psych.github.io/DataScience4Psych/" target="_blank"&gt;S. Mason Garrison&lt;/a&gt;
 &lt;/span&gt;
 &lt;/div&gt; 
 
@@ -98,22 +98,22 @@ glimpse(twinData)
 ```
 ## Rows: 3,808
 ## Columns: 16
-## $ fam      [3m[38;5;246m&lt;int&gt;[39m[23m 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,…
-## $ age      [3m[38;5;246m&lt;int&gt;[39m[23m 21, 24, 21, 21, 19, 26, 23, 29, 24, 28, 29, 19…
-## $ zyg      [3m[38;5;246m&lt;int&gt;[39m[23m 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
-## $ part     [3m[38;5;246m&lt;int&gt;[39m[23m 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2…
-## $ wt1      [3m[38;5;246m&lt;int&gt;[39m[23m 58, 54, 55, 66, 50, 60, 65, 40, 60, 76, 48, 70…
-## $ wt2      [3m[38;5;246m&lt;int&gt;[39m[23m 57, 53, 50, 76, 48, 60, 65, 39, 57, 64, 51, 67…
-## $ ht1      [3m[38;5;246m&lt;dbl&gt;[39m[23m 1.7000, 1.6299, 1.6499, 1.5698, 1.6099, 1.5999…
-## $ ht2      [3m[38;5;246m&lt;dbl&gt;[39m[23m 1.7000, 1.6299, 1.6799, 1.6499, 1.6299, 1.5698…
-## $ htwt1    [3m[38;5;246m&lt;dbl&gt;[39m[23m 20.0692, 20.3244, 20.2020, 26.7759, 19.2894, 2…
-## $ htwt2    [3m[38;5;246m&lt;dbl&gt;[39m[23m 19.7232, 19.9481, 17.7154, 27.9155, 18.0662, 2…
-## $ bmi1     [3m[38;5;246m&lt;dbl&gt;[39m[23m 20.9943, 21.0828, 21.0405, 23.0125, 20.7169, 2…
-## $ bmi2     [3m[38;5;246m&lt;dbl&gt;[39m[23m 20.8726, 20.9519, 20.1210, 23.3043, 20.2583, 2…
-## $ cohort   [3m[38;5;246m&lt;chr&gt;[39m[23m "younger", "younger", "younger", "younger", "y…
-## $ zygosity [3m[38;5;246m&lt;fct&gt;[39m[23m MZFF, MZFF, MZFF, MZFF, MZFF, MZFF, MZFF, MZFF…
-## $ age1     [3m[38;5;246m&lt;int&gt;[39m[23m 21, 24, 21, 21, 19, 26, 23, 29, 24, 28, 29, 19…
-## $ age2     [3m[38;5;246m&lt;int&gt;[39m[23m 21, 24, 21, 21, 19, 26, 23, 29, 24, 28, 29, 19…
+## $ fam      &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,…
+## $ age      &lt;int&gt; 21, 24, 21, 21, 19, 26, 23, 29, 24, 28, 29, 19…
+## $ zyg      &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+## $ part     &lt;int&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2…
+## $ wt1      &lt;int&gt; 58, 54, 55, 66, 50, 60, 65, 40, 60, 76, 48, 70…
+## $ wt2      &lt;int&gt; 57, 53, 50, 76, 48, 60, 65, 39, 57, 64, 51, 67…
+## $ ht1      &lt;dbl&gt; 1.7000, 1.6299, 1.6499, 1.5698, 1.6099, 1.5999…
+## $ ht2      &lt;dbl&gt; 1.7000, 1.6299, 1.6799, 1.6499, 1.6299, 1.5698…
+## $ htwt1    &lt;dbl&gt; 20.0692, 20.3244, 20.2020, 26.7759, 19.2894, 2…
+## $ htwt2    &lt;dbl&gt; 19.7232, 19.9481, 17.7154, 27.9155, 18.0662, 2…
+## $ bmi1     &lt;dbl&gt; 20.9943, 21.0828, 21.0405, 23.0125, 20.7169, 2…
+## $ bmi2     &lt;dbl&gt; 20.8726, 20.9519, 20.1210, 23.3043, 20.2583, 2…
+## $ cohort   &lt;chr&gt; "younger", "younger", "younger", "younger", "y…
+## $ zygosity &lt;fct&gt; MZFF, MZFF, MZFF, MZFF, MZFF, MZFF, MZFF, MZFF…
+## $ age1     &lt;int&gt; 21, 24, 21, 21, 19, 26, 23, 29, 24, 28, 29, 19…
+## $ age2     &lt;int&gt; 21, 24, 21, 21, 19, 26, 23, 29, 24, 28, 29, 19…
 ```
 
 .footnote[This is what Austrialian twins actually look like]
