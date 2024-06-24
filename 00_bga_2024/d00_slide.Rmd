@@ -1,5 +1,5 @@
 ---
-title: "Data Atlas <br> `r emo::ji('cat')`<br> for Behavior Geneticists"
+title: "Data Atlas <br> for Behavior Geneticists <br> `r emo::ji('globe')`"
 author: "S. Mason Garrison"
 subtitle: "Wake Forest University"
 output:
@@ -40,7 +40,7 @@ class: middle
 <!-- Slide 1: Introduction (1 minute) -->
 <!-- Script: Good [morning/afternoon/evening], everyone. My name is S. Mason Garrison, and I'm from Wake Forest University. Today, I'm excited to talk about the importance of data visualization in the field of behavior genetics. As the saying goes, "A picture is worth a thousand words." This is particularly true in our field, where complex data can be better understood through effective visualization techniques. -->
 
-```{r echo=FALSE,out.width="10%",fig.align='center',fig.cap="QR code for these slides",fig.height=3}
+```{r echo=FALSE,out.width="30%",fig.align='center',fig.cap="QR code for these slides",fig.height=3}
 library(qrcode)
 code <- qr_code("https://r-computing-lab.github.io/slides/00_bga_2024/d00_slide.html#1")
 plot(code)
@@ -57,36 +57,41 @@ plot(code)
 # The Power of Visualization
 
 
+
 ### "A picture is worth a thousand words."
 
-Visualizations in behavior genetics:
-- Facilitate understanding of complex data.
-- Reveal patterns and relationships not obvious from raw data.
-- Enable more effective communication of research findings.
+- Visualizations in behavior genetics:
+  - Facilitate understanding of complex data.
+  - Reveal patterns and relationships not obvious from raw data.
+  - Enable more effective communication of research findings.
 
 
 <!-- Slide 2: The Power of Visualization (1 minute) -->
 <!-- Script: The adage "A picture is worth a thousand words" is just as applicable to Behavior Genetics as it is to journalism. Visualizing data helps us to see patterns, relationships, and insights that might not be immediately apparent from raw numbers alone. Today, I will take you through the rich and diverse history of data visualization techniques in behavior genetics, from early methods to contemporary applications. -->
 
 ---
-## Alternative Talk
 
-I could have spent this talk showing you some of the cool visualizations I've made since the last conference...
+class: middle
+
+# Alternative Talk
+
+- I *could* have spent this talk showing you some of the cool visualizations I've made since the last conference...
 
 ---
 
-# Like This One
+# Like These Ones!
 
 .pull-left.center[
 <br>
 <br>
-```{r, echo=FALSE, out.width="99%", fig.align='center'}
+<br>
+```{r, echo=FALSE, out.width="98%", fig.align='center'}
 knitr::include_graphics("img/X chroms.png")
 ```
 ]
 
 .pull-right[
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
+```{r, echo=FALSE, out.width="75%", fig.align='center'}
 knitr::include_graphics("img/mtdna.png")
 ```
 ]
@@ -94,25 +99,33 @@ knitr::include_graphics("img/mtdna.png")
 ---
 
 # Or these!
-
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-knitr::include_graphics("img/upsidedownplots.png")
+.pull-left.center[
+```{r, echo=FALSE, out.width="99%", fig.align='center', fig.cap="A pedigree plot of the SSA mortality from 1900 to the present."}
+knitr::include_graphics("img/longevity.png")
 ```
-
+]
+.pull-right[
+```{r, echo=FALSE, out.width="99%", fig.align='center', fig.cap="A pedigree plot of the Swedish mortality from 1750 to the present."}
+knitr::include_graphics("img/sweden.png")
+```
+]
 
 ---
 
 # Or even my latest creation!
 
-That's extremely promising for making much better pedigrees plots...
 
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
+```{r, echo=FALSE, out.width="40%", fig.align='center'}
 knitr::include_graphics("img/upsidedownplots.png")
 ```
+
 .footnote[.center[
 [x.com/SMasonGarrison/status/1800222792933310619](https://x.com/SMasonGarrison/status/1800222792933310619) 
 ]
 ]
+--
+.tiny[I swear that's these are extremely promising for making much better pedigrees plots...]
+
 
 ---
 
@@ -123,8 +136,8 @@ knitr::include_graphics("img/upsidedownplots.png")
 knitr::include_graphics("img/nottoday.jpg")
 ```
 
-
-But I decided to focus on the history of data visualization in behavior genetics. I'll show you some of the cool visualizations I've made in the workshop.
+<!--  Instead, I decided to focus some historic data visualizations in behavior genetics and gauge interest in a few resources I'm developing.
+--> 
 
 ---
 
@@ -141,16 +154,20 @@ class: middle
 
 --
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
+```{r, echo=FALSE, out.width="30%", fig.align='center'}
 knitr::include_graphics("img/Wright20aFigure5_1.jpg")
 ```
 
 <!-- Slide 3: Historical Context (1 minute) -->
 <!-- Script: One of the earliest and most significant contributions to data visualization in genetics was Wright's Path Diagram, introduced in 1920. This diagram allowed researchers to visually represent the relationships between genetic traits and their underlying factors, revolutionizing how we interpret genetic data. -->
 
---- 
 
-# But that's... cliché. Let's see some other examples from Sewall Wright's work.
+---
+
+class: middle
+
+# But that's... cliché. 
+-  Let's see some other examples from Sewall Wright's work.
 
 --
 
@@ -159,27 +176,32 @@ knitr::include_graphics("img/googlesearch.png")
 ```
 
 ---
+
 <!-- Slide 4: Wright's Adaptive Landscape Diagram (2 minutes) 
 This chapter traces the origins and conceptual lineages of the adaptive landscape concept and its representations. While Armand Janet's 1895 concept arguably marks the origin of the adaptive landscape concept and even its graphic representation, Janet's concept had very limited impact when compared to Sewall Wright's concept from 1932. As part of his effort to reconcile Mendelian genetics and Darwinian evolution in his shifting balance theory, Wright offered the metaphor of the adaptive landscape and its topographic representation as a way of depicting the effect of variations in population size, migration, and the strength of selection. Wright's genetic version of the adaptive landscape inspired other versions of the adaptive landscape based on phenotypic changes and on molecular changes. As a result, the history of the adaptive landscape is described in terms of three lineages based on the material basis of the adaptive landscape: the genetic landscape, the phenotypic landscape, and the molecular landscape.
 -->
 
 ## Sewall Wright's 1932 Adaptive Landscape Diagram
 
-.pull-left-narrow[
-- Wright's adaptive landscape diagram was an attemptt to reconcile Mendelian genetics and Darwinian evolution. (Shifting Balance Theory)
-- Offered a metaphor of the adaptive landscape and its topographic representation.
-- Depicted the effect of variations in population size, migration, and the strength of selection.
-- Other versions of the adaptive landscape were inspired by Wright's original diagram.
-- (Ok technically Armand Janet's conceptualized this in 1895, but Wright's concept had a much larger impact.)
-]
-.footnote[]
-]
 
-.pull-right-wide[
+.pull-left[
+- Wright's adaptive landscape diagram was an attempt to reconcile Mendelian genetics and Darwinian evolution. (Shifting Balance Theory)
+
 ```{r, echo=FALSE, out.width="95%", fig.align='left'}
 knitr::include_graphics("img/wright6panel.png")
 ```
 ]
+
+--
+
+.pull-right[
+- Offered a metaphor of the adaptive landscape and its topographic representation.
+- Depicted the effect of variations in population size, migration, and the strength of selection.
+- Other versions of the adaptive landscape were inspired by Wright's original diagram.
+.small[- (Ok technically Armand Janet's conceptualized this in 1895, but Wright's concept had a much larger impact.)]
+]
+
+
 
 <!-- Script: Wright's adaptive landscape diagram was another groundbreaking visualization, depicting the relationship between genetic variation and fitness. This provided a visual representation of natural selection and evolutionary dynamics. -->
 
@@ -199,71 +221,87 @@ knitr::include_graphics("img/wright6panel.png")
 knitr::include_graphics("img/responses towright.png")
 ```
 ]
-.footnote[Credit: Panel from @Skipper_2004]
+.footnote[Credit: Panel from Skipper (2004)]
 
 <!-- Four adaptive landscape diagrams, resulting from critiques of Wright's Reference Wright1932 diagram. Fig. 2a is Ridley's (Reference Ridley1996, 219) depiction of a Fisherian landscape. Fig. 2b is Gavrilets’ (Reference Gavrilets1997, 309) depiction of the holey landscape. Fig. 2c is Coyne et al.'s (Reference Coyne, Barton and Turelli1997, 647) simplified Wrightian landscape. Fig. 2d is the Kauffman and Levin (Reference Kauffman and Levin1987, 33) rugged adaptive landscape. -->
 
 ---
 
+class: middle
 # Fast Forward to the Present
 
 ---
 
-# Modern Techniques
 
 ## Modern Path Diagrams
 
 - Modern path diagrams are used in structural equation modeling (SEM).
-
-- Visualize complex relationships between variables in a statistical model.
-
-- Help researchers understand the direct and indirect effects of variables on each other.
+- Now... they use `r emo::ji('square')`s, `r emo::ji('circle')`s, and `r emo::ji('left arrow')`s to represent variables, relationships, and causal pathways.
+- Visualize complex relationships between variables in a statistical model in a way that can be easily interpreted.
+- However, they can be challenging to create...
 
 ---
 
-# Classic path diagrams can start to resemble the wiring of a computer or a military aircraft.
+# .midi[Classic path diagrams can start to resemble ...]
 
-
+<!--  nuclear twin family (NTF) design -->
 .pull-left[
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
+## Military Aircraft
+```{r, echo=FALSE, out.width="90%", fig.align='center'}
 knitr::include_graphics("img/NTFD.path.diagram.png")
 ```   
+.tiny[Keller, M. C., Medland, S. E., Duncan, L. E., Hatemi, P. K., Neale, M. C., Maes, H. H. M., & Eaves, L. J. (2009). Modeling Extended Twin Family Data I: Description of the Cascade Model. Twin Research and Human Genetics, 12(1), 8–18. doi:10.1375/twin.12.1.8]
 ]
+
+--
 .pull-right[
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-knitr::include_graphics("img/cutepath.png")
+## Storybook Characters
+```{r, echo=FALSE, out.width="90%", fig.align='center'}
+knitr::include_graphics("img/Fig 5.jpg")
 ```
+.tiny[Hart, S.A., Little, C. & van Bergen, E. Nurture might be nature: cautionary tales and proposed solutions. npj Sci. Learn. 6, 2 (2021). https://doi.org/10.1038/s41539-020-00079-z]
 ]
+
 ---
 
 ### Manhattan Plots
 
+.pull-left-narrow[
 - Widely used in genome-wide association studies (GWAS).
 - Plot p-values for genetic variants across the genome.
 - Help identify regions of the genome associated with traits or diseases.
 - Visualize large-scale genetic data, making it easier to detect significant associations.
-
+]
 <!-- Slide 4: Modern Techniques (1 minute) -->
 <!-- Script: Moving to modern times, the Manhattan Plot has become a staple in genetic research, particularly for genome-wide association studies (GWAS). These plots help researchers identify significant genetic variants by visualizing p-values across the genome, making it easier to spot areas of interest. -->
+.footnote[All of Us Research Program Genomics Investigators (2024). Genomic data in the All of Us Research Program. Nature, 627(8003), 340–346. https://doi.org/10.1038/s41586-023-06957-x]
 
 --
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
+.pull-right-wide[
+```{r, echo=FALSE, out.width="90%", fig.align='center'}
 knitr::include_graphics("img/Genomic data in the All of Us Research Program_manhattan.jpg")
 ```
+]
 
 ---
 
+class: middle
 # Importance of Good Graphs for Science Communication
+
+---
 
 ## Case Study: Misinterpretation of Genetic Data
 .pull-left[
 - A figure in a high-profile Nature paper raised concerns about reinforcing racist beliefs.
 - The UMAP generated figure aimed to show genetic diversity but was misinterpreted as supporting genetic essentialism.
 - Highlights the need for careful design and interpretation of scientific figures.
-]
+.footnote.pull-left[- See more on the kerfuffle [here](https://www.nature.com/articles/d41586-024-00568-w)
+- All of Us Research Program Genomics Investigators (2024). Genomic data in the All of Us Research Program. Nature, 627(8003), 340–346. https://doi.org/10.1038/s41586-023-06957-x]
 
+]
 --
+
 .pull-right[
 ```{r, nature_figure, echo=FALSE, out.width="70%", fig.align="center"}
 knitr::include_graphics("img/Genomic data in the All of Us Research Program.jpg")
@@ -279,6 +317,12 @@ knitr::include_graphics("img/Genomic data in the All of Us Research Program.jpg"
 - Good graphs should accurately represent data without misleading the audience.
 - Consider the potential for misinterpretation and strive for clarity.
 - Use visualizations to enhance understanding and communication of scientific findings.
+```{r, echo=FALSE, out.width="60%", fig.align="center"}
+
+knitr::include_graphics("img/All of Us Research Program_A.jpg")
+
+```
+
 ]
 .pull-right[
 ```{r, ref.label="nature_figure", echo=FALSE, out.width="70%", fig.align="center"}
