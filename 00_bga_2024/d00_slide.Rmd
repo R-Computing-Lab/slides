@@ -85,13 +85,13 @@ class: middle
 <br>
 <br>
 <br>
-```{r, echo=FALSE, out.width="98%", fig.align='center'}
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("img/X chroms.png")
 ```
 ]
 
 .pull-right[
-```{r, echo=FALSE, out.width="75%", fig.align='center'}
+```{r, echo=FALSE, out.width="70%", fig.align='left'}
 knitr::include_graphics("img/mtdna.png")
 ```
 ]
@@ -154,7 +154,7 @@ class: middle
 
 --
 
-```{r, echo=FALSE, out.width="30%", fig.align='center'}
+```{r, echo=FALSE, out.width="35%", fig.align='center'}
 knitr::include_graphics("img/Wright20aFigure5_1.jpg")
 ```
 
@@ -166,7 +166,7 @@ knitr::include_graphics("img/Wright20aFigure5_1.jpg")
 
 class: middle
 
-# But that's... cliché. 
+# But that's... cliché
 -  Let's see some other examples from Sewall Wright's work.
 
 --
@@ -317,6 +317,7 @@ knitr::include_graphics("img/Genomic data in the All of Us Research Program.jpg"
 - Good graphs should accurately represent data without misleading the audience.
 - Consider the potential for misinterpretation and strive for clarity.
 - Use visualizations to enhance understanding and communication of scientific findings.
+
 ```{r, echo=FALSE, out.width="60%", fig.align="center"}
 
 knitr::include_graphics("img/All of Us Research Program_A.jpg")
@@ -336,12 +337,14 @@ knitr::include_graphics("img/All of Us Research Program_A.jpg")
 
 # Developing Resources
 
-### Atlas with `ggplot2` in R
+
+## Atlas with `ggplot2` in R
 
 - A comprehensive guide for researchers to create effective visualizations using ggplot2.
 - Includes examples of various types of plots and when to use them.
 - Aims to standardize and improve the quality of visualizations in behavior genetics.
 - Provides practical tips and best practices for creating clear and informative plots.
+
 ```{r echo=FALSE,out.width="10%",fig.align='center',fig.cap="QR code for the atlas",fig.height=3}
 library(qrcode)
 code <- qr_code("https://r-computing-lab.github.io/data-atlas/")
@@ -357,7 +360,67 @@ plot(code)
 
 ---
 
-## Proposed R Package
+## Atlas Path Diagrams
+
+.pull-left[
+```{r, echo=FALSE, out.width="60%", fig.align='center', caption="Sample path diagrams from the atlas"}
+knitr::include_graphics("img/atlaspathdiagrams.jpg")
+```
+]
+.pull-right[
+- Dot Notation for specifying path diagrams.
+- Provides a consistent and intuitive way to create path diagrams.
+- Easy to copy and paste, and modify for different models.
+- And easy to generate and tweak path diagrams for publication via `DiagrammeR`.
+- .small[Note: The atlas is still in very much in development and I'm happy to take requests for additional models.]
+- .small[Note Note: Kudos to openmx and umx for their working examples of dot notation for some models]
+]
+
+---
+
+## Zoom In
+
+```{r, echo=FALSE, out.width="70%", fig.align='center', caption="Sample path diagrams from the atlas"}
+knitr::include_graphics("img/atlaspathdiagrams.jpg")
+```
+
+---
+
+## Atlas Correlations
+
+```{r, echo=FALSE, out.width="90%", fig.align='center', caption="Sample correlations from the atlas"}
+knitr::include_graphics("img/atlascorrelations.jpg")
+```
+
+---
+
+## Zoom out
+
+.pull-left[
+```{r, echo=FALSE, out.width="60%", fig.align='center', caption="Sample path diagrams from the atlas"}
+knitr::include_graphics("img/atlascorrelations.jpg")
+```
+]
+
+
+---
+
+## Zoom less out
+
+.pull-left[
+```{r, echo=FALSE, out.width="70%", fig.align='center', caption="Sample Correlations"}
+knitr::include_graphics("img/atlascorrelations.jpg")
+```
+]
+.pull-right[
+```{r, echo=FALSE, out.width="100%", fig.align='center', caption="Kinship Correlations by Zygosity"}
+
+knitr::include_graphics("img/correlation-matrix-zyg-1.png")
+```
+]
+---
+
+## Proposed R Package ?
 
 Integration with `OpenMx`:
 - Streamlines the creation of visualizations for structural equation modeling (SEM) and other complex analyses. (Probably attempting to generalize `DiagrammeR` to works beyond RAM models)
@@ -379,13 +442,23 @@ Integration with `OpenMx`:
 - Educational materials: Provide guidance and training for researchers at all levels. Designed to complement what is already available from IBG and openMx and my own Data Science Materials.
 ]
 --
+
+```{r echo=FALSE,out.width="10%",fig.align='center',fig.cap="QR code for the atlas",fig.height=3}
+library(qrcode)
+code <- qr_code("https://r-computing-lab.github.io/data-atlas/")
+plot(code)
+```
+
+--
+
 .pull-right[
+
 
 ### Benefits:
 
 - Improves the quality of visualizations in behavior genetics.
 - Increases the impact and reach of research findings.
-- Fosters collaboration and sharing of best practices.
+<!--  - Fosters collaboration and sharing of best practices.-->
 - Amplify the reach and impact of behavior genetics research.
 - Support the behavior genetics community with more tools and resources.
 <!-- Slide 8: Democratizing Visualization Tools (1 minute) -->
