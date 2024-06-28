@@ -194,21 +194,44 @@ knitr::include_graphics("img/wright6panel.png")
 
 --
 
-.pull-right[
-- Offered a metaphor of the adaptive landscape and its topographic representation.
-- Depicted the effect of variations in population size, migration, and the strength of selection.
-- Other versions of the adaptive landscape were inspired by Wright's original diagram.
-.small[- (Ok technically Armand Janet's conceptualized this in 1895, but Wright's concept had a much larger impact.)]
+.pull-right.midi[
+- Offered a metaphor of the adaptive landscape and its topographic representation
+- Represents the relationship between (phe|ge)notypes and their reproductive success (fitness).
+- Landscape is visualized in a multi-dimensional space, where each point corresponds to a specific (phe|ge)notype, and the height (z) of the landscape at that point represents the fitness associated with that (phe|ge)notype.
+- Some key features are: 
+  - Fitness Peaks & Valleys .small[(high points (phe|ge)notypes with high fitness, while low points represent those with low fitness)], Organisms are "trying" to climb towards the peaks; and 
+  - Ridges & Valleys .small[(ridges represent (phe|ge)notypes that are similar to each other, while valleys represent dissimilarity).]
+  - Evolutionary Pathways .small[(The paths organisms take through the landscape depend on mutation, selection, and genetic drift.) 
+  - Evolution tends to move populations up the slopes towards higher fitness, but can be constrained by the landscape's topography.]
 ]
 
 
+<!-- An adaptive landscape, also known as a fitness landscape, is a conceptual model used in evolutionary biology to represent the relationship between genotypes (or phenotypes) and their reproductive success (fitness). This landscape is visualized in a multi-dimensional space, where each point corresponds to a specific genotype (or phenotype), and the height of the landscape at that point represents the fitness associated with that genotype (or phenotype).
 
+Here are the key features and concepts of an adaptive landscape:
+
+Dimensions: Each axis in the landscape represents a different genetic or phenotypic trait. In a simple two-dimensional model, the x and y axes could represent two different traits, while the z-axis represents fitness.
+
+Fitness Peaks and Valleys: High points (peaks) on the landscape represent genotypes or phenotypes with high fitness, while low points (valleys) represent those with low fitness. Organisms are "trying" to climb towards the peaks.
+
+Evolutionary Pathways: The paths organisms take through the landscape depend on mutation, selection, and genetic drift. Evolution tends to move populations up the slopes towards higher fitness, but can be constrained by the landscape's topography.
+
+Ruggedness: The complexity of the landscape is referred to as its ruggedness. A rugged landscape has many peaks and valleys, indicating a complex relationship between genotype and fitness, while a smooth landscape has fewer, more distinct peaks.
+
+Adaptive Peaks: These are the optimal points where an organism has maximum fitness given the current environmental conditions.
+
+Shifting Landscapes: The adaptive landscape can change over time due to changes in the environment, leading to new peaks and valleys and thus new evolutionary pressures.
+
+This concept helps to visualize and understand how populations evolve over time, how they can become trapped on local fitness peaks, and how they might traverse valleys to reach higher peaks through mechanisms like genetic drift or significant environmental changes.
+
+-->
 <!-- Script: Wright's adaptive landscape diagram was another groundbreaking visualization, depicting the relationship between genetic variation and fitness. This provided a visual representation of natural selection and evolutionary dynamics. -->
 
 ---
 
 # Four adaptive landscape diagrams
 .pull-left[
+- .small[Other versions of the adaptive landscape were inspired by Wright's original diagram. (Technically Armand Janet's conceptualized this in 1895, but Wright's concept had a much larger impact.)]
 - Various adaptations and critiques of Wright's original diagram.
   - A: Ridley's depiction of a Fisherian landscape (1996).
   - B: Gavrilets’ depiction of the holey landscape (1997).
@@ -294,7 +317,7 @@ class: middle
 ## Case Study: Misinterpretation of Genetic Data
 .pull-left[
 - A figure in a high-profile Nature paper raised concerns about reinforcing racist beliefs.
-- The UMAP generated figure aimed to show genetic diversity but was misinterpreted as supporting genetic essentialism.
+- The UMAP (Uniform Manifold Approximation and Projection) generated figure aimed to show genetic diversity but was misinterpreted as supporting genetic essentialism.
 - Highlights the need for careful design and interpretation of scientific figures.
 .footnote.pull-left[- See more on the kerfuffle [here](https://www.nature.com/articles/d41586-024-00568-w)
 - All of Us Research Program Genomics Investigators (2024). Genomic data in the All of Us Research Program. Nature, 627(8003), 340–346. https://doi.org/10.1038/s41586-023-06957-x]
