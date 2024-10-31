@@ -19,7 +19,7 @@ output:
 ```{r child = "../setup.Rmd"}
 ```
 
-<!--  -->
+
 
 ```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
 # Remember to compile
@@ -31,25 +31,34 @@ if (!require("emo")) devtools::install_github("hadley/emo")
 library(emo)
 ```
 
----
 
-class: middle
+class: middle, center
+
+# Let's Talk About Posters
+
+### (No, really - let's *talk* about them!)
+
+---
 
 # Hello world!
 
+.pull-left[
 - **Who am I?**
-  - Assistant Professor at Wake Forest University
-  - Specializing in Quantitative Psychology
+  - Dr. S. Mason Garrison
+  - Assistant Professor in Quantitative Psychology
+  - Love turning data into stories
 - **What will we cover today?**
-  - How to create and deliver an effective conference posters
+  - How to create and deliver an effective conference poster
+]
+--
+.pull-right[
 - **Today's Roadmap:**
-  1. Quick intro and goals (10 min)
-  2. Poster mechanics and components (20 min)
-  3. The art of the poster pitch (30 min)
+  1. Quick intro
+  2. (Re)think what posters are for
+  3. Learn the basics
+  4. Practice your pitch!
   
--- 
-
-```{r echo=FALSE,out.width="10%",fig.align='center',fig.cap="QR code for these slides",fig.height=3}
+```{r echo=FALSE,out.width="50%",fig.align='center',fig.cap="QR code for these slides",fig.height=3}
 library(qrcode)
 code <- qr_code("https://r-computing-lab.github.io/slides/00_poster/d00_slide#1")
 plot(code)
@@ -58,111 +67,315 @@ plot(code)
 [r-computing-lab.github.io/slides/01_poster/d00_slide](https://r-computing-lab.github.io/slides/00_poster/d00_slide#1) 
 ]
 ]
+]
 
 
 ---
 
-# Understanding the Audience
-
-.pull-left[
-- **Why it matters:**
-  - Tailoring your content to your audience ensures engagement and comprehension
-- **Types of audiences:**
-  - Academic experts vs. general attendees
-- **Strategies:**
-  - Know their level of knowledge
-  - Anticipate questions and interests
-]
-
-.pull-right[
-```{r echo=FALSE, out.width="50%"}
-# This image should depict an audience to visually support the content.
-knitr::include_graphics("img/audience.jpg")
-```
-]
-
-
-
-
----
-
+class: middle
 
 # What is a Poster Presentation?
 
+---
+
 .pull-left[
-- Definition: A visual presentation of research typically displayed on a large board.
-- Purpose:
-  - To communicate research findings succinctly.
-  - To engage in discussions with attendees.
-  - To gain feedback and ideas from peers and experts.
-] 
+### Core Elements & Functions
+- Visual research presentation
+- Typically 36" x 48" or similar (or 48" x 36"!)
+- Combines text, graphics, and data to communicate research findings
+- Primary functions: research communication, networking, and feedback generation
+
+]
 --
-.pull-right[ 
+.pull-right[
 ```{r echo=FALSE, out.width="90%"}
-knitr::include_graphics("img/git-logo.png")
-# knitr::include_graphics("img/poster_presentation.jpg")
-
+knitr::include_graphics("img/cutedoodle.png")
 ```
+
+
+### Common Contexts
+- Academic conferences
+- Research symposia
+- Department events
+- Industry meetings
+]
+
+
+---
+
+class: middle
+
+# What a Poster Presentation isn't
+
+---
+
+class: middle
+
+# Posters Aren't Novels!
+
+.pull-left[
+### Common Mistake
+- Cramming everything in
+- Letting it speak for itself
+- Standing back silently
+]
+
+.pull-right[
+### Better Approach
+- Highlight key points
+- Start conversations
+- Guide the story
 ]
 
 ---
 
-# What Makes a Good Poster?
+class: middle
+
+# The Basics Still Matter
+
+
+.center[
+
+### But they're just the beginning
+]
+
+.pull-left[
+- Clear title
+- Organized sections
+- Clean design
+- Key figures
+]
+
+.pull-right[
+- Think of these as your
+  - Conversation starters
+  - Visual aids
+  - Memory hooks
+]
+
+---
+
+class: middle, center
+
+# Poster Components & Design
 
 
 ---
-# Components of a Poster
+
+# Essential? Components
 
 .pull-left[
-- Title: Clear and concise, capturing the essence of your research.
-- Authors and Affiliations: List of researchers and their institutions.
-- Abstract: Brief summary of the research, including key objectives, methods, results, and conclusions.
-- Introduction/Background: Context and significance of the research.
+### Essential? Components
+1. Title & Authors
+2. Abstract
+3. Introduction
+4. Methods
+5. Results
+6. Discussion
+7. References
 ]
 
 --
-.pull-right[ 
-```{r echo=FALSE, out.width="50%"}
-knitr::include_graphics("img/github_logo.png")
-knitr::include_graphics("img/github-mark.png")
+.pull-right[
+```{r echo=FALSE, out.width="90%"}
+knitr::include_graphics("img/chatsaysposter.png")
+
 ```
+
 ]
-
-
-<!-- "Now, let's break down the components of a poster.
-
-First, the title should be clear and concise, capturing the essence of your research.
-
-Next, you should list the authors and their affiliations, so viewers know who conducted the research and where it was done.
-
-The abstract is a brief summary of your research, including the key objectives, methods, results, and conclusions.
-
-The introduction or background section provides the context and significance of your research."
--->
 
 ---
 
-# Components of a Poster (Cont.)
-
+# Poster Components & Design
 .pull-left[
+1. **Title & Authors**
+   - Clear, compelling title
+   - Contact information
+   - Author affiliations
+2. **Introduction**
+   - Research context
+   - Clear objectives
+   - Research questions
+   - Significance
+]
 
-- Methods: Description of the research design and methodology.
-- Results: Key findings presented clearly, using tables, graphs, and charts.
-- Discussion/Conclusion: Interpretation of the results, implications for the field, and future research directions.
-- References: List of cited works.
-- Acknowledgments: Recognition of funding sources, collaborators, and contributors.
+--
+
+.pull-right.medi[
+### Design Principles
+1. **Visual Hierarchy**
+   - Clear reading path
+   - Important info stands out
+   - Logical flow
+
+2. **Space Usage**
+   - 40% white space
+   - Balanced layout
+   - Clean margins
+
+3. **Typography**
+   - Readable fonts (24pt+ text)
+   - Consistent styling
+   - Clear headings (36pt+)
 ]
 
 
-<!-- "The methods section describes your research design and methodology, providing enough detail for someone else to replicate your study.
+----
 
-The results section presents your key findings clearly, often using tables, graphs, and charts to make the data easy to understand.
+# Methods & Results Presentation
 
-In the discussion or conclusion section, you interpret the results, discuss their implications for the field, and suggest directions for future research.
+.pull-left[
+### Methods Section
+- Clear research design
+- Key procedures
+- Important variables
+- Analysis approach
 
-Don't forget to include a references section to list the works you cited and an acknowledgments section to recognize funding sources, collaborators, and other contributors."
+]
 
--->
+--
+
+.pull-right[
+- Consider including:
+  - Flow diagrams
+  - Timeline graphics
+  - Sample characteristics
+  - Equipment/materials
+]
+
+---
+
+# Methods & Results Presentation
+
+.pull-left[
+### Results Display
+- Clear figures/tables
+- Statistical findings
+- Visual hierarchy of results
+]
+
+--
+
+.pull-right[
+- Key elements:
+  - Main findings first
+  - Supporting evidence
+  - Error bars/uncertainty
+  - Effect sizes
+]
+
+---
+
+class: middle
+
+# The Art of the Poster Pitch
+
+---
+
+# The Pitch
+
+.pull-left[
+### Presentation Levels
+1. **Lightning (30 sec)**
+   - Main finding
+   - Key implication
+   - Next steps
+
+2. **Standard (2 min)**
+   - Research context
+   - Methods overview
+   - Key findings
+   - Main implications
+]
+--
+
+.pull-right[
+3. **Deep Dive (5+ min)**
+   - Full background
+   - Detailed methods
+   - Complete findings
+   - Future directions
+
+
+- Use the poster as a guide to facilitate conversation
+
+]
+---
+
+class: middle, center
+
+# Story Time:
+## The Posterless Poster Presentation
+
+---
+
+
+# What Really Happened
+
+.pull-left[
+### Disaster?
+- Poster thrown out by conference staff
+- Presentation next day
+- No time to reprint
+]
+--
+.pull-right[
+### Actually...
+- Mini printouts worked great
+- Focus shifted to conversation
+- More engaging interactions
+- Great feedback received
+]
+
+---
+
+class: middle, center, inverse
+
+# Your Turn!
+
+.center[
+### Let's practice the art of the pitch
+]
+
+---
+
+# Practice Exercise
+1. Partner up
+2. Take turns:
+   - 30-second version
+   - 2-minute version
+   - Q&A practice
+3. Feedback focus:
+   - Clarity
+   - Engagement
+   - Time management
+
+
+---
+
+# Do you need a poster to pitch?
+
+.center[
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("img/posters.png")
+```
+]
+
+---
+
+
+# Practice Exercise
+1. Partner up
+2. Take turns:
+   - 30-second version
+   - 2-minute version
+   - Q&A practice
+3. Feedback focus:
+   - Clarity
+   - Engagement
+   - Time management
+
+
 
 ---
 
@@ -180,6 +393,8 @@ class: middle
 - Whether they'd like to collaborate
 ]
 
+--
+
 .pull-right[
 Not: (even though you spent hours on it)
 - Whether your references are properly formatted
@@ -190,6 +405,14 @@ Not: (even though you spent hours on it)
 
 ---
 
+# Recap
+
+--
+
+- Audience participation?
+
+
+---
 ## Any Questions?
 
 Feel free to ask any questions now, or reach out to me after the talk via email _garrissm@wfu.edu_ or on github _github.com/smasongarrison_.
