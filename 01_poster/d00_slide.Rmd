@@ -60,11 +60,11 @@ class: middle, center
   
 ```{r echo=FALSE,out.width="50%",fig.align='center',fig.cap="QR code for these slides",fig.height=3}
 library(qrcode)
-code <- qr_code("https://r-computing-lab.github.io/slides/00_poster/d00_slide#1")
+code <- qr_code("https://r-computing-lab.github.io/slides/01_poster/d00_slide.html")
 plot(code)
 ```
 .footnote[.center[
-[r-computing-lab.github.io/slides/01_poster/d00_slide](https://r-computing-lab.github.io/slides/00_poster/d00_slide#1) 
+[r-computing-lab.github.io/slides/01_poster/d00_slide.html](https://r-computing-lab.github.io/slides/01_poster/d00_slide.html)
 ]
 ]
 ]
@@ -95,7 +95,6 @@ knitr::include_graphics("img/cutedoodle.png")
 
 ### Common Contexts
 - Academic conferences
-- Research symposia
 - Department events
 - Industry meetings
 ]
@@ -196,7 +195,6 @@ knitr::include_graphics("img/chatsaysposter.png")
    - Research context
    - Clear objectives
    - Research questions
-   - Significance
 ]
 
 --
@@ -260,7 +258,7 @@ knitr::include_graphics("img/chatsaysposter.png")
 - Key elements:
   - Main findings first
   - Supporting evidence
-  - Error bars/uncertainty
+  - Error bars/uncertainty (some way for your reader to visualaly evalue your conclusion)
   - Effect sizes
 ]
 
@@ -344,7 +342,7 @@ class: middle, center, inverse
 2. Take turns:
    - 30-second version
    - 2-minute version
-   - Q&A practice
+   - Q&A practice?
 3. Feedback focus:
    - Clarity
    - Engagement
@@ -369,7 +367,7 @@ knitr::include_graphics("img/posters.png")
 2. Take turns:
    - 30-second version
    - 2-minute version
-   - Q&A practice
+   - Q&A practice?
 3. Feedback focus:
    - Clarity
    - Engagement
@@ -419,11 +417,11 @@ Feel free to ask any questions now, or reach out to me after the talk via email 
 
 ```{r qr_ds4p, echo=FALSE, fig.align = "center", out.width = "30%", caption="Scan the QR code to visit the Data Science for Psych website"}
 library(qrcode)
-code <- qr_code("https://DataScience4Psych.github.io/DataScience4Psych/")
+code <- qr_code("https://r-computing-lab.github.io/slides/01_poster/d00_slide.html")
 plot(code)
 ```
 
 .footnote[.center[
-[DataScience4Psych.github.io/DataScience4Psych/](https://DataScience4Psych.github.io/DataScience4Psych/) 
+[r-computing-lab.github.io/slides/](https://r-computing-lab.github.io/slides/01_poster/d00_slide.html) 
 ]
 ]
