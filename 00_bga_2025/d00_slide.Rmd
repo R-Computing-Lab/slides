@@ -64,16 +64,18 @@ plot(code)
 ---
 
 # Mitochondrial Heritability of Alzheimer’s Disease
-### Evidence from the Utah Population Database  
-Mason Garrison,
-Nithya Mylakumar M.
-Xuanyu Lyu,
-Michael Hunter,
-Margie Gatz,
-Ken Robert Smith,
-Alex Burt
+### Evidence from the Utah Population Database
+
+- Mason Garrison,
+- Nithya Mylakumar M.
+- Xuanyu Lyu,
+- Michael Hunter,
+- Margie Gatz,
+- Ken Robert Smith,
+- *Alex Burt*
 
 **NIA RF1-AG073189**
+
 ---
 
 # The Power of Mitochondria (mtDNA)
@@ -98,6 +100,7 @@ But critically, even though these pathways are biologically plausible, they’ve
   - oxidative stress regulation.
 - All of these are plausible mechanistic pathways for Alzheimer’s risk. (Swerdlow, 2018; Coskun et al., 2012; Wallace, 2005)
 ]
+--
 .pull-right-narrow[
 - Mutations in mtDNA accumulate with age, and 
   - dysfunctional mitochondria are repeatedly observed in AD-affected brain tissue (e.g., Coskun, et al 2004).
@@ -241,7 +244,8 @@ crop_bottom_percent("img/Slide12.PNG", pct = 6)
 
 ---
 
-.pull-left[
+## Additive Relatedness
+
 ```{r echo=FALSE, out.height = "500px", fig.align = "center"}
 library(BGmisc)
 library(ggpedigree)
@@ -284,11 +288,24 @@ ggpedigree::ggpedigree(df_ped_all,
 
 )
 ```
-]
---
-.pull-right[
-```{r echo=FALSE, out.height = "500px", fig.align = "center"}
 
+---
+
+## Mitochondrial Relatedness
+
+```{r echo=FALSE, out.height = "500px", fig.align = "center"}
+library(BGmisc)
+library(ggpedigree)
+set.seed(8)
+
+# Simulate a family with 4 generations
+df_ped_6 <- simulatePedigree(Ngen = 6)
+
+df_ped_all <- recodeSex(df_ped_6,
+  code_male = "M",
+  recode_male = 1,
+  recode_female = 0
+) %>% rename(personID = ID, famID=fam)
 ggpedigree::ggpedigree(df_ped_all,
   interactive = TRUE,
   personID = "personID",
@@ -330,13 +347,14 @@ For each dyad, we traced whether the relation passed through the maternal or pat
 class: middle
 # Foreshadowing...
 
-In theory this is where that talk would shift to showing the results of our analysis, but...  
+In theory, this is where that talk would shift to showing the results of our analysis, but...  
 
 --
 
 ## But in practice?
 
 - We hit constraints. And not subtle ones...
+- But twos
     - family size and
     - diagnostic coverage
 
@@ -355,7 +373,7 @@ knitr::include_graphics("img/longevity.png")
 ```
 ]
 .pull-right[
-```{r, echo=FALSE, out.width="59%", fig.align='center', fig.cap=""}
+```{r, echo=FALSE, out.width="55%", fig.align='center', fig.cap=""}
 knitr::include_graphics("img/mtdna.png")
 ```
 ]
@@ -392,14 +410,13 @@ background-repeat: no-repeat
 
 # Constraint 1: Family Size 
 
-- I wish our family was that ... .tiny[small].
+- I wish our family was that ... .tiny[small.]
 
 --
-- I wish it was that ... .tiny[manageable].
+- I wish it was that ... .tiny[manageable.]
 - But it’s not.
 
 --
-
 - To give you a sense of the scale of what we’re working with... 
 
 ---
@@ -415,14 +432,11 @@ knitr::include_graphics("img/stacked_bar_log.png")
 .pull-right[
 - Yes, that scale is logarithmic.  
   - And yes, that really is a lot of cousins.
-
 - For context:
   - the human body contains approximately `2 × 10^13` blood cells,
   - and our dataset has a comparable order of magnitude in cousin pairs.
-
 - In theory, we have:  
   - `4,160,931^2` possible cousin pairs in our big family.
-
 - That’s approximately:  
   - 17 trillion 313 billion 346 million 786 thousand 761.
 ]
@@ -431,14 +445,14 @@ knitr::include_graphics("img/stacked_bar_log.png")
 
 # Without log scaling...
 
-.pull-left[
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
+.pull-left-wide[
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("img/stacked_bar_pattern_all.png")
 ```
 
 ]
 --
-.pull-right[
+.pull-right-narrow[
 - Same plot.  
 - Just without the log scale.
 - This is what happens when you try to visualize 4,160,931 cousins
@@ -465,7 +479,7 @@ That means our classification of AD status is necessarily a dichotomy—and not 
 - This is not just a matter of missing values at random—  
   —it introduces ambiguity in the outcome label itself.
 ]
-
+--
 .pull-right[
 - Our classification is necessarily binary:  
   - AD case vs. non-case.
@@ -479,6 +493,11 @@ That means our classification of AD status is necessarily a dichotomy—and not 
 
 ---
 
+class: middle
+
+# What We Hoped to Find
+
+---
 
 # What We Hoped to Find
   
@@ -518,10 +537,8 @@ We have 4.8 million people, but we only have 100,000 AD cases, and 100,000 non-A
 .pull-left[
 - We observed **strongly negative phi coefficients**  
   - for AD status across all degrees of relatedness.
-
 - Cousins were **less likely** to share an AD diagnosis than expected by chance.
-
-- This contradicts the **known heritability of AD**—  
+- This contradicts the **known heritability of AD** 
   - and immediately suggests problems with the data.
 ]
 
@@ -532,21 +549,34 @@ We have 4.8 million people, but we only have 100,000 AD cases, and 100,000 non-A
   - whether the dyad was maternal or paternal,
   - how close they were,
   - how well we modeled diagnostic quality.
-
 - The cousin similarity design detects a signal
   - but it's in the wrong direction.
+]
+--
 - In hindsight, this is not surprising:
   - We had 100,000 well-classified AD cases and 100,000 matched controls—
   - but the remaining 4.6 million people?
-]
-- We had 100,000 well-classified AD cases and 100,000 matched controls—
-—but the remaining 4.6 million people?
 
 ---
 
-# Why the Signal is Weak?
+# Results: What We Found
+
+```{r, echo=FALSE, out.width="75%", fig.align='center'}
+knitr::include_graphics("img/phis.png")
+``` 
+
+---
+# They're missing...
   
-```{r, echo=FALSE, out.width="99%", fig.align='center'}
+```{r, echo=FALSE, out.width="75%", fig.align='center'}
+knitr::include_graphics("img/stacked_bar_pattern.png")
+``` 
+
+---
+
+# They're missing... by design
+  
+```{r, echo=FALSE, out.width="75%", fig.align='center'}
 knitr::include_graphics("img/stacked_bar_pattern.png")
 ``` 
 
@@ -556,7 +586,7 @@ knitr::include_graphics("img/stacked_bar_pattern.png")
   
 <!-- Script: So what did we learn? We learned that the cousin similarity design is a powerful tool for evaluating mtDNA using pedigree structure—not through genotyping, but through patterns of resemblance. But we also learned that the data we have are not sufficient to answer our original question. -->
 <!-- Script: What actually failed here? Because it’s not the sample size. It’s not the analysis. It’s the design. -->
-..pull-left[
+.pull-left[
 - Constraint 1: Family size
   - Turns out, this design is plenty powerful.
   - Even a small slice of the family was enough to detect effects.
@@ -569,14 +599,16 @@ knitr::include_graphics("img/stacked_bar_pattern.png")
   - We need more complete diagnostic coverage for relatives.
   - We need to be able to distinguish between AD and non-AD relatives.
   - We need to be able to distinguish between AD and unknown relatives.
-  If anything, the case-control design induced selection bias.
-  
+]
+--
+
+- If anything, the case-control design induced selection bias.
 - Which means:
   - We didn’t test resemblance across families—
   - we tested it within a preselected outcome set.
   - We can’t yet resolve whether mtDNA meaningfully contributes to AD via familial resemblance.
   - But we’ve constructed the architecture to test that question—one that can be deployed as richer phenotype linkages emerge.
-]
+
 
 ---
 
