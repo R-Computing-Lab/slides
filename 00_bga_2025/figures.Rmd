@@ -39,6 +39,7 @@ df <- df %>%
          n_rows_unfiltered = ifelse(n_rows_unfiltered == 0, .5, n_rows_unfiltered),
          n_rows_filtered = ifelse(n_rows_filtered == 0, .5, n_rows_filtered),
          mit = factor(mit, labels = c("0", "1")),
+         total = n_rows_unfiltered + n_rows_filtered,
          remainder = n_rows_unfiltered - n_rows_filtered)
 
 
@@ -57,6 +58,34 @@ ggplot(df, aes(x = factor(round(range_mid, 4)), y = proportion, fill = mit)) +
   ) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
+```
+
+```{r}
+
+# Plot # reverse the order of the bars
+savep <- ggplot(df %>% mutate(mit = fct_relevel(mit, "1", "0")),
+      aes(x = factor(round(range_mid, 4)), y = total, fill = mit)) +
+  geom_bar(stat = "identity", position = "dodge") +
+scale_y_log10(labels = scales::label_log())+
+  labs(
+    title = "Number of Unique Rows",
+    fill = "mit"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, vjust = 0.5))  +
+ scale_x_discrete(labels = function(x) {
+    sapply(x, function(val) {
+       range_val <- trunc(abs(log2(as.numeric(x))))
+     # paste0("m", parts[1], " ", range_val)
+       range_val
+    })
+  }) +   coord_flip()  +
+  labs(x = "Degree Relative", y = "Count", fill = "MtDNA")   + scale_fill_viridis_d(option = "D", direction = -1, begin = 0, end = .8)
+
+
+savep
+ggsave(savep,
+       filename = "slides\\00_bga_2025\\img\\stacked_bar_log.png", width = 10, height = 6, dpi = 300)
 ```
 ```{r}
 # Reshape to long format for stacked bars: remainder + filtered = total
