@@ -446,7 +446,7 @@ knitr::include_graphics("img/stacked_bar_log.png")
 # Without log scaling...
 
 .pull-left-wide[
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
+```{r, echo=FALSE, out.width="85%", fig.align='center'}
 knitr::include_graphics("img/stacked_bar_pattern_all.png")
 ```
 

@@ -254,3 +254,21 @@ savep
 ggsave(savep,filename = "slides\\00_bga_2025\\img\\stacked_bar_pattern_all_log_filled.png", width = 10, height = 6, dpi = 300)
 
 ```
+
+
+```{r}
+library(ggplot2)
+
+savep <- p + scale_y_log10(labels = scales::label_log(),breaks = waiver(),n.breaks = 6)+   scale_fill_manual(
+    values = c("Available" = "#f2b3cf",#"#ffe6f2", 
+               "Unavailable" = "#f2b3cf"),#"#cff7e1"),
+    name = "Rows",
+    labels = c("Available", "Unavailable")
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")+
+   theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+savep
+ggsave(savep,filename = "slides\\00_bga_2025\\img\\phis.png", width = 10, height = 6, dpi = 300)
+
+```
