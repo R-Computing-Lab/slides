@@ -306,6 +306,7 @@ df_ped_all <- recodeSex(df_ped_6,
   recode_male = 1,
   recode_female = 0
 ) %>% rename(personID = ID, famID=fam)
+
 ggpedigree::ggpedigree(df_ped_all,
   interactive = TRUE,
   personID = "personID",
@@ -333,12 +334,12 @@ ggpedigree::ggpedigree(df_ped_all,
   )) 
 
 ```
-]
 
 
-<!-- Script: Our approach was to algorithmically reconstruct extended pedigrees and extract cousin dyads at various degrees of relatedness. We used BGmisc, our custom R package for extended behavior genetic analysis (Garrison, Hunter, Lyu, Trattner, & Burt, 2024), in combination with graph theory algorithms to identify cousin pairs and compute path-based relatedness estimates.
 
-For each dyad, we traced whether the relation passed through the maternal or paternal line, whether they shared mtDNA, and whether they had any shared environment. We then calculated polychoric correlations for AD outcomes across these bins, stratified by degree of relatedness and lineage. -->
+<!-- Script: Our approach was to algorithmically reconstruct extended pedigrees and extract cousin dyads at various degrees of relatedness. We used BGmisc, our custom R package for extended behavior genetic analysis (Garrison, Hunter, Lyu, Trattner, & Burt, 2024), in combination with graph theory algorithms to identify cousin pairs and compute path-based relatedness estimates.  -->
+
+<!-- For each dyad, we traced whether the relation passed through the maternal or paternal line, whether they shared mtDNA, and whether they had any shared environment. We then calculated polychoric correlations for AD outcomes across these bins, stratified by degree of relatedness and lineage. -->
 
 
 
