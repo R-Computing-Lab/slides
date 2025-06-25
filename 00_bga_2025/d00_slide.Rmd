@@ -644,12 +644,12 @@ Feel free to ask any questions now, or reach out to me after the talk via email 
 
 ```{r qr_ds4p, echo=FALSE, fig.align = "center", out.width = "30%", caption="Scan the QR code to visit the Data Atlas"}
 library(qrcode)
-code <- qr_code("https://r-computing-lab.github.io/data-atlas/")
+code <- qr_code("https://r-computing-lab.github.io/slides/00_bga_2025/d00_slide.html")
 plot(code)
 ```
 
 .footnote[.center[
-[r-computing-lab.github.io/data-atlas/](https://r-computing-lab.github.io/data-atlas/) 
+[r-computing-lab.github.io/slides/00_bga_2025/d00_slide.html](https://r-computing-lab.github.io/slides/00_bga_2025/d00_slide.html) 
 ]
 ]
 

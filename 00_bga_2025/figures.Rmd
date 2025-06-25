@@ -258,16 +258,37 @@ ggsave(savep,filename = "slides\\00_bga_2025\\img\\stacked_bar_pattern_all_log_f
 
 ```{r}
 library(ggplot2)
+library(ggpedigree)
+library(tidyverse)
+df <- read_csv("slides\\00_bga_2025\\results.csv") %>% mutate(
+  mtdna_factor =  as.factor(mtdna)
+)
 
-savep <- p + scale_y_log10(labels = scales::label_log(),breaks = waiver(),n.breaks = 6)+   scale_fill_manual(
-    values = c("Available" = "#f2b3cf",#"#ffe6f2", 
-               "Unavailable" = "#f2b3cf"),#"#cff7e1"),
-    name = "Rows",
-    labels = c("Available", "Unavailable")
-  ) +
-  theme_minimal() +
-  theme(legend.position = "bottom")+
-   theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+names(df)
+savep <- ggPhenotypeByDegree(
+  df = df,
+  y_var = "Has_Dementia_phi_est",
+  y_ci_lb = "Has_Dementia_phi_LL",
+  y_ci_ub = "Has_Dementia_phi_UL",
+  config = list(
+    use_only_classic_kin = FALSE,
+    drop_classic_kin = FALSE,
+    group_by_kin = TRUE,
+    use_relative_degree = TRUE,
+    drop_non_classic_sibs = FALSE,
+    filter_degree_max = 12,
+    grouping_column = "mtdna_factor",
+    filter_n_pairs = 10,
+    annotate_include = FALSE
+  )
+) + #I want to add an watermark with a message 
+  
+  annotate("text",
+         label = "Don't interpret these values",
+         x = .5^4,
+         y = -.3,
+         angle = 21, size = 10, color = "gray15", alpha = 0.4)
+
 savep
 ggsave(savep,filename = "slides\\00_bga_2025\\img\\phis.png", width = 10, height = 6, dpi = 300)
 
