@@ -405,7 +405,7 @@ background-repeat: no-repeat
 
 # Constraint 1: Family Size 
 
-<!-- Script: In this project, we’re not looking at longevists, but at Alzheimer’s cases. And while the Utah Population Database is large, it’s not infinite. So we had to make some hard choices about how to define our cases and controls. -->
+
 
 ---
 
@@ -469,7 +469,7 @@ knitr::include_graphics("img/stacked_bar_pattern_all.png")
   
 <!-- Script: Even with a population this large, the usable signal is fragile. Many individuals have no diagnostic data at all. Others have only a single diagnostic entry, or an AD-related cause of death recorded via ICD-9. There’s also no uniform ascertainment: some participants have decades of EMR data, others none.
 
-That means our classification of AD status is necessarily a dichotomy—and not a very precise one. And that binary outcome—AD case or not—masks variability in severity, age of onset, and diagnostic certainty. -->
+ -->
 
 .pull-left[
 - Even with a population this large, the usable signal is fragile. 
@@ -477,8 +477,7 @@ That means our classification of AD status is necessarily a dichotomy—and not 
   - some individuals have clear AD diagnoses,
   - some have indicators of **no** AD, and
   - many have no diagnostic data at all.
-- This is not just a matter of missing values at random—  
-  —it introduces ambiguity in the outcome label itself.
+
 ]
 --
 .pull-right[
@@ -553,10 +552,6 @@ We have 4.8 million people, but we only have 100,000 AD cases, and 100,000 non-A
 - The cousin similarity design detects a signal
   - but it's in the wrong direction.
 ]
---
-- In hindsight, this is not surprising:
-  - We had 100,000 well-classified AD cases and 100,000 matched controls—
-  - but the remaining 4.6 million people?
 
 ---
 
@@ -565,6 +560,14 @@ We have 4.8 million people, but we only have 100,000 AD cases, and 100,000 non-A
 ```{r, echo=FALSE, out.width="75%", fig.align='center'}
 knitr::include_graphics("img/phis.png")
 ``` 
+
+---
+
+# hindsight
+
+- In hindsight, this is not surprising:
+  - We had 100,000 well-classified AD cases and 100,000 matched controls—
+  - but the remaining 4.6 million people?
 
 ---
 # They're missing...
