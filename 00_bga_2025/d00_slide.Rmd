@@ -1,6 +1,6 @@
 ---
 title: "Tracing Mitochondrial Inheritance of Alzheimer's Disease  <br> `r emo::ji('family')`"
-subtitle: "A Family-Based Case-Control Study of 4.8 Million Cousins"
+subtitle: "A Family-Based Case-Control Study of 4ish Million Cousins"
 author: "S. Mason Garrison <br> Wake Forest University"
 output:
   xaringan::moon_reader:
@@ -46,7 +46,7 @@ BibOptions(check.entries = FALSE, style = "markdown")
 # Hello world!
 
 <!-- Slide 1: Introduction (1 minute) -->
-<!-- Script: Good [morning/afternoon/evening], everyone. My name is S. Mason Garrison, and I'm from Wake Forest University. I'm excited to continue the saga that Mike has begun. We have had big math problems, so who am I change the vibes. So behond a tale of my big data problems. Today, I’ll be presenting our attempt to trace mitochondrial inheritance patterns in Alzheimer’s Disease using a family-based case-control design. This talk is fundamentally about inference under constraint. Because while our dataset is enormous—4.8 million people embedded in extended pedigrees—our question hinges on what the data don’t tell us just as much as what they do. -->
+<!-- Script: Good [morning/afternoon/evening], everyone. My name is S. Mason Garrison, and I'm from Wake Forest University. I'm excited to continue the saga that Mike has begun. We have had big math problems, so who am I change the vibes. So behold a tale of my big data problems. Today, I’ll be presenting our attempt to trace mitochondrial inheritance patterns in Alzheimer’s Disease using a family-based case-control design. This talk is fundamentally about inference under constraint. Because while our dataset is enormous—4.8 million people embedded in extended pedigrees—our question hinges on what the data don’t tell us just as much as what they do. -->
 
 <!-- This is work with Nithya Mylakumar, Xuanyu Lyu, Michael Hunter, Margie Gatz, Ken Smith, and Alex Burt, and it was supported by the National Institute on Aging [RF1-AG073189].-->
 
@@ -220,17 +220,16 @@ crop_bottom_percent("img/Slide12.PNG", pct = 6)
 # The Data: What We Made
  
 .pull-left[
-- We algorithmically reconstructed extended pedigrees:
-  - using **BGmisc**, our custom R package for extended behavior genetic analysis (Garrison, Hunter, Lyu, Trattner, & Burt, 2024),  
-  - in combination with graph theory algorithms to identify cousin pairs,  
-  - and computed path-based relatedness estimates (Hunter, Garrison et al., RnR).
+- We reconstructed extended pedigrees:
+  - using **BGmisc**, our custom R package for extended behavior genetic analysis .small[(Garrison, Hunter, Lyu, Trattner, & Burt, 2024)],  
+  - in combination with graph theory,  
+  - and computed path-based relatedness estimates .small[(Hunter, Garrison et al., RnR)].
 - For each dyad, we traced:
   - nuclear relatedness,
   - maternal vs. paternal lineage,
-  - mtDNA sharing, and
-  - potential shared environment.
+  - mtDNA, and potential shared environment.
 ]
-
+--
 .pull-right[
 - To illustrate this on a human scale, we simulated a family:
   - spanning 6 generations,  
@@ -246,6 +245,7 @@ crop_bottom_percent("img/Slide12.PNG", pct = 6)
 
 ## Additive Relatedness
 
+.center[
 ```{r echo=FALSE, out.height = "500px", fig.align = "center"}
 library(BGmisc)
 library(ggpedigree)
@@ -275,7 +275,7 @@ ggpedigree::ggpedigree(df_ped_all,
     focal_fill_component = "additive",
     focal_fill_mid_color = "orange",
     focal_fill_low_color = "#9F2A63FF",
- #   focal_fill_high_color = "#2A9F63FF",
+   # focal_fill_high_color = "#2A9F63FF",
     focal_fill_method = "gradient",
     focal_fill_legend_title = "",
  sex_legend_title = "Relatedness to Founder\n\nSex",
@@ -288,10 +288,13 @@ ggpedigree::ggpedigree(df_ped_all,
 
 )
 ```
+]
 
 ---
 
 ## Mitochondrial Relatedness
+
+.center[
 
 ```{r echo=FALSE, out.height = "500px", fig.align = "center"}
 library(BGmisc)
@@ -308,7 +311,7 @@ df_ped_all <- recodeSex(df_ped_6,
 ) %>% rename(personID = ID, famID=fam)
 
 ggpedigree::ggpedigree(df_ped_all,
-  interactive = TRUE,
+  interactive = T,
   personID = "personID",
   famID = "famID",
   config = list(
@@ -328,12 +331,12 @@ ggpedigree::ggpedigree(df_ped_all,
      sex_legend_title = "MTDNA Relatedness to Founder\n\nSex",
     focal_fill_na_value = "black",
     value_rounding_digits = 4,
-    
    code_male = "1",
    tooltip_columns = c("personID","focal_fill")
   )) 
 
 ```
+]
 
 
 
@@ -604,7 +607,9 @@ knitr::include_graphics("img/stacked_bar_pattern.png")
   - We need to be able to distinguish between AD and non-AD relatives.
   - We need to be able to distinguish between AD and unknown relatives.
 ]
---
+---
+
+# What We Learned Instead
 
 - If anything, the case-control design induced selection bias.
 - Which means:
@@ -626,7 +631,7 @@ Methodologically, this demonstrates a scalable framework for evaluating mtDNA us
  -->
   
 - Substantively, we can’t yet resolve whether mtDNA meaningfully contributes to AD via familial resemblance. 
-- But we’ve constructed the architecture to test that question—one that can be deployed as richer phenotype linkages emerge.
+- But we’ve constructed the architecture to test that question—one that can be re-deployed with more complete phenotype linkages.
 - Methodologically, this demonstrates a scalable framework for evaluating mtDNA using pedigree structure—not through genotyping, but through patterns of resemblance.
 - The most fruitful next step is reducing missingness in our phenotype data 
 
