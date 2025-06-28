@@ -246,7 +246,7 @@ crop_bottom_percent("img/Slide12.PNG", pct = 6)
 ## Additive Relatedness
 
 .center[
-```{r echo=FALSE, out.height = "500px", fig.align = "center"}
+```{r echo=FALSE, out.width="800px", out.height = "500px", fig.align = "center"}
 library(BGmisc)
 library(ggpedigree)
 set.seed(8)
@@ -296,7 +296,7 @@ ggpedigree::ggpedigree(df_ped_all,
 
 .center[
 
-```{r echo=FALSE, out.height = "500px", fig.align = "center"}
+```{r echo=FALSE, out.width="800px",out.height = "500px", fig.align = "center"}
 library(BGmisc)
 library(ggpedigree)
 set.seed(8)
@@ -345,10 +345,106 @@ ggpedigree::ggpedigree(df_ped_all,
 <!-- For each dyad, we traced whether the relation passed through the maternal or paternal line, whether they shared mtDNA, and whether they had any shared environment. We then calculated polychoric correlations for AD outcomes across these bins, stratified by degree of relatedness and lineage. -->
 
 
+---
+
+# If plotly doesn't behave...
+
+```{r echo=FALSE, out.width="500px", out.height = "500px", fig.align = "center"}
+library(BGmisc)
+library(ggpedigree)
+library(tidyverse)
+library(patchwork) # for combining plots
+set.seed(8)
+
+# Simulate a family with 4 generations
+df_ped_6 <- simulatePedigree(Ngen = 6)
+
+df_ped_all <- recodeSex(df_ped_6,
+  code_male = "M",
+  recode_male = 1,
+  recode_female = 0
+) %>% rename(personID = ID, famID=fam)
+
+m1 <- ggpedigree::ggpedigree(df_ped_all,
+  interactive = FALSE,
+  personID = "personID",
+  famID = "famID",
+  config = list(
+    label_method = "geom_text",
+    label_text_size = 1,
+    label_include=FALSE,
+    point_size = 3,
+    sex_color_include = FALSE,
+    focal_fill_personID = 10011,
+    focal_fill_include = TRUE,
+    focal_fill_force_zero = TRUE,
+    focal_fill_component = "additive",
+    focal_fill_mid_color = "orange",
+    focal_fill_low_color = "#9F2A63FF",
+   # focal_fill_high_color = "#2A9F63FF",
+    focal_fill_method = "gradient",
+    focal_fill_legend_title = "",
+ sex_legend_title = "Relatedness to Founder\n\nSex",
+    focal_fill_na_value = "black",
+    value_rounding_digits = 4,
+      code_male = "1",
+    focal_fill_scale_midpoint = 0.5,
+        tooltip_columns = c("personID","focal_fill")
+  )
+
+)
+
+
+
+m2 <- ggpedigree::ggpedigree(df_ped_all,
+  interactive = F,
+  personID = "personID",
+  famID = "famID",
+  config = list(
+    label_method = "geom_text",
+    labels_include=FALSE,
+    label_text_size = 1,
+    point_size = 3,
+    sex_color_include = FALSE,
+    focal_fill_personID = 10011,
+    focal_fill_include = TRUE,
+    focal_fill_force_zero = TRUE,
+    focal_fill_component = "mitochondrial",
+    focal_fill_high_color = "#d55e00",
+    focal_fill_mid_color = "#d55e00",
+    focal_fill_low_color = "grey10",
+    focal_fill_scale_midpoint = 0.85,
+    focal_fill_legend_title = "",
+     sex_legend_title = "MTDNA Relatedness to Founder\n\nSex",
+    focal_fill_na_value = "black",
+    value_rounding_digits = 4,
+   code_male = "1",
+   tooltip_columns = c("personID","focal_fill")
+  )) 
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, dimensions=c(8, 16)}
+m1 + m2 +
+  plot_layout(
+    ncol = 2, #heights = c(1.1, 2.5),
+    guides = "collect", tag_level = "new"
+  ) +
+  plot_annotation(
+    tag_levels = list(c("Additive", "Mitochrondrial")),
+    theme = theme(plot.margin = margin(0, 0, 0, 0))
+  ) +
+  guides(shape = "none") &
+  theme(
+    legend.position = "none",
+    plot.margin = unit(c(0, 0, 0.0, 0), "lines")
+  )
+```
+
 
 ---
 
 class: middle
+
 # Foreshadowing...
 
 In theory, this is where that talk would shift to showing the results of our analysis, but...  
