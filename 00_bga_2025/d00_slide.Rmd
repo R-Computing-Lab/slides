@@ -349,7 +349,7 @@ ggpedigree::ggpedigree(df_ped_all,
 
 # If plotly doesn't behave...
 
-```{r echo=FALSE, out.width="500px", out.height = "500px", fig.align = "center"}
+```{r echo=FALSE, out.width="500px", out.height = "600px", fig.align = "center"}
 library(BGmisc)
 library(ggpedigree)
 library(tidyverse)
@@ -402,7 +402,7 @@ m2 <- ggpedigree::ggpedigree(df_ped_all,
   famID = "famID",
   config = list(
     label_method = "geom_text",
-    labels_include=FALSE,
+    label_include=FALSE,
     label_text_size = 1,
     point_size = 3,
     sex_color_include = FALSE,
