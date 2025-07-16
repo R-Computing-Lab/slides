@@ -136,7 +136,6 @@ if(file.exists("img/neurodiverse_modes.png")) {
 - Inaccessibility isn’t a flaw in the system — it is the system.
 
 --
-
 - Now before you think this is just a problem for neurodivergent students, consider this:  
   - If you’ve ever struggled to keep up with a fast-paced lecture, or felt lost in a sea of text-heavy slides, you’ve felt the impact of these defaults.
   
@@ -158,10 +157,13 @@ if(file.exists("img/neurodiverse_modes.png")) {
 --
 .pull-right[
 
-- Now, *redesigning* is a big word. It’s not just about adding captions or alt text, or adding more uncompensated labor to your to-do list.
+- Now, *redesigning* is a big word. 
+- It’s not just about 
+  - adding captions or alt text, or 
+  - adding more uncompensated labor to your to-do list.
 - It’s about rethinking the assumptions we make about who our students are and how they learn.
 - It's reconsidering our defaults, and asking who gets left out.
-- And, if you do it right, these changes benefit everyone, not just those with disabilities.
+- And, if you do it right, these changes benefit **everyone**, not just those with disabilities.
 - They also benefit *you* as an instructor!
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
@@ -191,6 +193,9 @@ if(file.exists("img/neurodiversity_roots.png")) {
 
 ---
 
+# Yes... I'm editing based on an old talk...
+
+---
 # The Power of Mitochondria (mtDNA)
 
 ### "It's the powerhouse of the cell" ``r emo::ji("zap")``  .small[Every Middle School Biology Teacher]
