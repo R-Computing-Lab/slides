@@ -193,9 +193,337 @@ if(file.exists("img/neurodiversity_roots.png")) {
 
 ---
 
-# Yes... I'm editing based on an old talk...
+# The Trouble with Teaching Tools
+
+<!-- Slide 6: Conventional tools -->
+<!-- Script: Let’s start with something familiar: the tools we use to teach. Diagnostic criteria, checklists, trait maps, and imaging studies are common features in neuroscience and psychology classrooms. These are often presented as objective — as just-the-facts summaries of what ADHD or autism looks like. But these tools frame variation in constrained ways. What’s visible in a brain scan becomes “the disorder.” What’s absent from a diagnostic checklist becomes invisible. The very act of diagramming a “deficit” suggests that deviation from a statistical mean is failure — not just difference. -->
+
+.pull-left[
+- Diagnostic tools like the DSM shape how students conceptualize difference.
+- Trait charts and brain imaging imply dysfunction without context.
+- Case examples often highlight challenges but omit identity and agency.
+- Checklists simplify complexity into pathology.
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="85%", fig.align='center'}
+
+if(file.exists("img/dsm_case_slide.png")) {
+  knitr::include_graphics("img/dsm_case_slide.png")
+} else {
+  knitr::include_graphics("../img/logo.png")
+}
+
+```
+]
 
 ---
+
+# What Gets Centered?
+
+<!-- Slide 7: Hidden curriculum -->
+<!-- Script: The structure of our materials tells students what matters. If every example is a deficit, students learn that neurodivergence is a problem. If every brain image highlights a deviation, students learn to pathologize the visible. If every intervention is designed to normalize, students assume that normalization is the goal. This is what disability scholars call the “hidden curriculum”: the values we teach without saying them aloud. -->
+
+- Emphasis on normalization trains students to expect convergence.
+- Visuals like heatmaps or "reduced activation" imply that divergence = deficiency.
+- “Support plans” focus on mitigation, not affirmation.
+- These messages are rarely explicit — but they’re learned.
+
+---
+
+# The Power of Representation
+
+<!-- Slide 8: Language and visuals -->
+<!-- Script: Representation isn’t just about who’s in the slides — it’s also about how they’re framed. Saying “students with autism struggle with communication” is different from saying “students with autism may communicate in ways not recognized by neurotypical norms.” One locates difficulty in the person; the other, in the interaction. The same is true for visual representation. Images of isolated brains or redacted faces convey something about belonging — or its absence. -->
+
+.pull-left[
+- “Impairment” vs. “difference”
+- “Deficit” vs. “divergent profile”
+- “Normal” vs. “statistically common”
+- Language encodes assumptions about causality and deviance.
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+
+if(file.exists("img/language_frame_shift.png")) {
+  knitr::include_graphics("img/language_frame_shift.png")
+} else {
+  knitr::include_graphics("../img/logo.png")
+}
+```
+]
+
+---
+
+# A Note on Expansion
+
+<!-- Slide 9: Broadening the frame -->
+<!-- Script: So far we’ve focused on neurodevelopmental diagnoses like ADHD and autism — and that’s still the core of the talk. But I want to loop back to something I mentioned earlier: that the neurodiversity paradigm doesn’t need to stop there. The same framing strategies — pathologizing language, deficit-based visuals, hidden assumptions — also apply to how we talk about blindness, about echolalia, about alternative communication. A more expansive understanding of neurodiversity helps us see these parallels — and do better by all our students. -->
+
+- Strategies that affirm neurodevelopmental variation also apply to:
+  - Blind students using tactile navigation
+  - Deaf students engaging in signed academic discourse
+  - Nonspeaking students using AAC
+- These aren’t separate cases — they reveal the same design failures
+- Inclusion starts with what gets named, visualized, and expected
+
+---
+
+# What Inclusion Actually Looks Like
+
+<!-- Slide 10: Universal design and planning -->
+<!-- Script: So what does inclusive teaching look like — not in theory, but in practice? It starts before students enter the room. Inclusion isn’t just offering an accommodation letter and hoping for the best. It means designing courses from the outset to anticipate variation. That’s the principle behind Universal Design for Learning. But UDL isn’t just checklists or formatting tweaks — it’s a philosophical shift: assuming diversity is the default. Designing for variation. And doing so upfront. -->
+
+.pull-left[
+- Inclusion is a planning problem, not a reaction problem.
+- UDL = anticipating variation, not retrofitting for exception.
+- Ask: what kinds of learners are implicitly excluded?
+- Build access into materials, structure, and expectations.
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+
+if(file.exists("img/udl_intro.png")) {
+  knitr::include_graphics("img/udl_intro.png")
+} else {
+  knitr::include_graphics("../img/logo.png")
+}
+```
+]
+
+---
+
+# Examples of Inclusive Practice
+
+<!-- Slide 11: What this can look like -->
+<!-- Script: Here are some concrete examples. If you teach with dense visual slides, consider how blind students or screen reader users might access the material. If your quizzes rely on fast recall, think about how executive function diversity reshapes time. If your class rewards verbal spontaneity, what’s the role of alternative communication modes? Inclusive pedagogy means not assuming your own defaults are universal. -->
+
+.pull-left[
+- Visual: Alt text, audio descriptions, tactile models.
+- Temporal: Flexible timing, asynchronous engagement.
+- Communicative: Support AAC, typed response options, pause time.
+- Structural: Consistent layout, upfront expectations.
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="85%", fig.align='center'}
+
+if(file.exists("img/inclusive_grid.png")) {
+  knitr::include_graphics("img/inclusive_grid.png")
+} else {
+  knitr::include_graphics("../img/logo.png")
+}
+```
+]
+
+---
+
+# What Students Learn Instead
+
+<!-- Slide 12: Consequences of inclusion -->
+<!-- Script: When you change what and how you teach, you change what students learn — not just about content, but about people. They learn that variation is real, expected, and respected. They learn that difference isn’t deficiency. They learn that their classroom — maybe for the first time — was built for them. And that changes what they believe is possible, for themselves and for others. -->
+
+- Inclusive frameworks teach:
+  - Difference ≠ deficit
+  - Accessibility is foundational, not supplemental
+  - Inclusion can be designed, not improvised
+  - All students benefit when none are treated as exceptions
+
+---
+
+# But What About the Pushback?
+
+<!-- Slide 13: Instructor resistance -->
+<!-- Script: Any time you talk about redesigning curriculum, there’s pushback. People ask: How am I supposed to accommodate everyone? What if students game the system? What if I lose rigor? These questions reflect a deeper anxiety — not about access, but about authority. When we say “plan for variation,” we challenge the idea that there is one correct, measurable, teachable pace or format. That’s not a threat to learning — that’s a redefinition of who education is for. -->
+
+- Common fears:
+  - “What if it’s too much work?”
+  - “What if they take advantage?”
+  - “What if I can’t measure them fairly?”
+- But these are design challenges — not reasons to exclude
+- Rigor isn’t standardization — it’s clarity plus support
+
+---
+
+# What We Hoped Students Would Learn
+
+<!-- Slide 14: Student outcomes (ideal) -->
+<!-- Script: Let’s rewind. When we teach ADHD, autism, dyslexia, we often hope students will walk away with empathy, with understanding, with scientific nuance. We hope they’ll remember the complexity — that no two people present the same way. We hope they’ll learn that difference doesn’t mean broken. That disability isn’t inherently tragic. That neurodivergence can be identity. That access matters. That science can be humanizing. -->
+
+- Variation is real and expected
+- Labels don’t explain people
+- Barriers are often environmental
+- Neurodivergence includes strength, not just risk
+- Accessibility is part of rigor
+
+---
+
+# What They Actually Learn (If We’re Not Careful)
+
+<!-- Slide 15: Hidden learning -->
+<!-- Script: But what do they learn instead? If we’re not careful — if we don’t name our assumptions, reframe our slides, audit our assignments — they learn something else. That disabled people are hard to deal with. That disability is always a problem. That the goal is to fix. That students who need different things don’t belong here. That access is optional. That disability is incompatible with excellence. That’s not in your lecture. But it’s in your design. -->
+
+- Neurodivergent = broken
+- Support = pity or burden
+- “Real” students don’t need flexibility
+- Disability = exception, not norm
+- Teaching = standardization, not communication
+
+---
+
+# Reframing the Learning Environment
+
+<!-- Slide 16: Model shifts -->
+<!-- Script: What if we took those assumptions and flipped them? What if we said: disability isn’t the problem — inflexibility is. What if we made it impossible to build a class that didn’t work for blind students, or AAC users, or students with timeblindness? What if our learning targets included access and dignity? What if inclusion was the default design constraint — not the patch? -->
+
+.pull-left[
+- Redesign around outliers, not averages
+- Start with disability, not after it
+- Teach with difference in mind from day one
+- Inclusion as infrastructure, not afterthought
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+
+if(file.exists("img/redesign_startpoint.png")) {
+  knitr::include_graphics("img/redesign_startpoint.png")
+} else {
+  knitr::include_graphics("../img/logo.png")
+}
+```
+]
+
+---
+
+# Case Study: Rewriting a Lecture
+
+<!-- Slide 17: Before and after -->
+<!-- Script: Here’s an example. Left: an older version of a lecture slide on executive dysfunction. Right: a revised version using a neurodiversity-informed frame. Same science. But in the first version, the student is the problem. In the second, the system shares responsibility. In the first: deficit and disorder. In the second: variation and strategy. These shifts may seem small — but to students, they change everything. -->
+
+```{r, echo=FALSE, out.width="90%", fig.align='center'}
+
+
+if(file.exists("img/executive_dysfunction_reframe.png")) {
+  knitr::include_graphics("img/executive_dysfunction_reframe.png")
+} else {
+  knitr::include_graphics("../img/logo.png")
+}
+```
+
+---
+
+# Student Responses
+
+<!-- Slide 18: What students say -->
+<!-- Script: And here’s what students say in response. When you teach access explicitly — when you name neurodivergence as part of the curriculum instead of an accommodation footnote — students notice. They feel seen. They participate more. They start using language that resists stigma. Some will tell you this is the first time their brain or body wasn’t treated as a problem. That’s not sentiment. That’s signal. -->
+
+.pull-left[
+- "I didn’t realize this was the first time I saw myself in the material."
+- "I thought accommodations meant I didn’t belong. Now I think they’re a sign we all do."
+- "I’ve never seen a slide designed for me."
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="75%", fig.align='center'}
+
+
+if(file.exists("img/student_quotes.png")) {
+  knitr::include_graphics("img/student_quotes.png")
+} else {
+  knitr::include_graphics("../img/logo.png")
+}
+```
+]
+
+---
+
+# Implications for Training
+
+<!-- Slide 19: Beyond one course -->
+<!-- Script: These choices ripple outward. When we train students in psychology or neuroscience, we’re shaping the frameworks they’ll bring into clinics, labs, and classrooms. If our teaching reinforces stigma, they’ll carry that forward. If it models respect and design equity, they’ll build on it. Neurodiversity-informed pedagogy doesn’t stop with one lecture — it rewrites what kinds of minds and bodies education is designed to support. -->
+
+- Curriculum = cultural transmission
+- Today’s undergrad = tomorrow’s provider, evaluator, policymaker
+- Pedagogy shapes clinical language, research framing, hiring norms
+- Inclusion in training leads to access in systems
+
+---
+
+# Where to Start
+
+<!-- Slide 20: Practical entry points -->
+<!-- Script: So where do you begin? You don’t need to rebuild your entire syllabus overnight. Start by auditing slides. Rewrite one case study. Add image descriptions. Use multimodal materials. Make your policies access-explicit. Ask students what they need — and believe them. Don’t wait for a letter. Build with them in mind. From the beginning. -->
+
+- Audit: Who’s represented? Who’s missing?
+- Language: Neutralize, humanize, decenter pathology
+- Materials: Alt text, captions, structure, pacing
+- Policies: Expect variation; build it in
+
+---
+
+# Summary
+
+<!-- Slide 21: Recap -->
+<!-- Script: So to summarize — we’ve talked about the deficit model and what it fails to capture. We’ve looked at how conventional tools frame difference. We’ve introduced the neurodiversity paradigm as both critique and design principle. And we’ve argued that these lessons extend beyond diagnosis — toward a broader ethic of variation. Not everyone learns the same way. Not everyone experiences the world the same way. And that’s not a challenge to teaching. That’s the reason we teach. -->
+
+.pull-left[
+- Deficit framing pathologizes variation
+- Neurodiversity affirms complexity and legitimacy
+- Inclusive pedagogy is design, not exception
+- Students notice — and respond
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+
+if(file.exists("img/summary_graphic.png")) {
+  knitr::include_graphics("img/summary_graphic.png")
+} else {
+  knitr::include_graphics("../img/logo.png")
+}
+```
+]
+
+---
+
+# Acknowledgments
+
+<!-- Slide 22: Credits -->
+<!-- Script: Thank you to my collaborators, especially Navarre, Uliaszek, & Garrison (under review); to the scholars whose work shaped this framing — including Sinclair, Singer, Walker, Schalk, and Minich — and to the students whose presence and feedback helped build this talk. -->
+
+- CDS & neurodiversity scholarship: Sinclair (1993), Singer (1999), Minich (2016), Schalk (2017), Walker (2021)
+- Curricular critique: Navarre, Uliaszek, & Garrison (under revision)
+- Students in PSY/NSC classrooms, Wake Forest University
+
+---
+
+## Any Questions?
+
+<!-- Slide 23: Close -->
+<!-- Script: Thank you for your time. I’m happy to take questions now or connect later by email or GitHub. You can also scan this QR code to revisit the slides. -->
+
+Feel free to reach out via email _garrissm@wfu.edu_ or on github _github.com/smasongarrison_
+
+```{r qr, echo=FALSE, fig.align = "center", out.width = "30%"}
+code <- qr_code("https://r-computing-lab.github.io/slides/02_neurodiversity/d00_slide.html")
+plot(code)
+```
+
+.footnote[.center[
+[r-computing-lab.github.io/slides/02_neurodiversity/d00_slide.html](https://r-computing-lab.github.io/slides/02_neurodiversity/d00_slide.html)
+]]
+
+---
+
+class: middle
+
+# Appended Talk for AV testing
+
+---
+
 # The Power of Mitochondria (mtDNA)
 
 ### "It's the powerhouse of the cell" ``r emo::ji("zap")``  .small[Every Middle School Biology Teacher]
