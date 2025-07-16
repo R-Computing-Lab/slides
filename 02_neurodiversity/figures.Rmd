@@ -1,0 +1,295 @@
+---
+title: "Untitled"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(tidyverse)
+```
+
+
+```{r cars}
+
+# Read in your data (assuming it's saved as CSV, pasted here for reproducibility)
+df <- read_csv("slides\\00_bga_2025\\rawnumbers.csv")
+
+missing <- 4160931^2 - sum(df$n_rows_unfiltered)
+
+df <- df %>%
+  rbind(
+    tibble(
+      mit = c(0),
+      range_min = c(0),
+      range_max = c(0.0002197266),
+      n_rows_unfiltered = missing,
+      n_rows_filtered = 0.5,
+      output_file = ""
+    )
+  )
+
+# Calculate midpoint of the range for plotting
+df <- df %>%
+  mutate(range_mid = (range_min + range_max) / 2,
+         proportion = ifelse(n_rows_unfiltered > 0.5, n_rows_filtered / n_rows_unfiltered, 0),
+         n_rows_unfiltered = ifelse(n_rows_unfiltered == 0, .5, n_rows_unfiltered),
+         n_rows_filtered = ifelse(n_rows_filtered == 0, .5, n_rows_filtered),
+         mit = factor(mit, labels = c("0", "1")),
+         total = n_rows_unfiltered + n_rows_filtered,
+         remainder = n_rows_unfiltered - n_rows_filtered)
+
+
+# Optional: Remove 0-denominator rows
+#df <- df %>% filter(!is.na(proportion))
+
+# Plot
+ggplot(df, aes(x = factor(round(range_mid, 4)), y = proportion, fill = mit)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_y_continuous(labels = percent_format(accuracy = 0.01)) +
+  labs(
+    title = "Proportion Filtered by Range Midpoint and mit Status",
+    x = "Range Midpoint",
+    y = "Proportion Filtered",
+    fill = "mit"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
+```
+
+```{r}
+
+# Plot # reverse the order of the bars
+savep <- ggplot(df %>% mutate(mit = fct_relevel(mit, "1", "0")),
+      aes(x = factor(round(range_mid, 4)), y = total, fill = mit)) +
+  geom_bar(stat = "identity", position = "dodge") +
+scale_y_log10(labels = scales::label_log())+
+  labs(
+    title = "Number of Unique Rows",
+    fill = "mit"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, vjust = 0.5))  +
+ scale_x_discrete(labels = function(x) {
+    sapply(x, function(val) {
+       range_val <- trunc(abs(log2(as.numeric(x))))
+     # paste0("m", parts[1], " ", range_val)
+       range_val
+    })
+  }) +   coord_flip()  +
+  labs(x = "Degree Relative", y = "Count", fill = "MtDNA")   + scale_fill_viridis_d(option = "D", direction = -1, begin = 0, end = .8)
+
+
+savep
+ggsave(savep,
+       filename = "slides\\00_bga_2025\\img\\stacked_bar_log.png", width = 10, height = 6, dpi = 300)
+```
+```{r}
+# Reshape to long format for stacked bars: remainder + filtered = total
+df_long <- df %>%
+  select(mit, range_mid, filtered = n_rows_filtered, remainder) %>%
+  pivot_longer(cols = c(filtered, remainder), names_to = "part", values_to = "count") %>%
+  mutate(part = case_when(
+    part == "filtered" ~ "Available",
+    part == "remainder" ~ "Unavailable",
+    TRUE ~ NA_character_
+  ))
+
+# Plot
+ggplot(df_long, aes(x = factor(round(range_mid, 4)), y = count, fill = part)
+       ) +
+  geom_bar(aes(group = mit), stat = "identity",
+           position = position_dodge2(preserve = "single", padding = 0.1))+
+
+#  facet_wrap(~ mit, scales = "free_y") +
+  scale_fill_manual(
+    values = c("Available" = "steelblue", "Unavailable" = "gray90"),
+    name = "Rows",
+    labels = c("Available", "Unavailable")
+  ) +
+  labs(
+    title = "Filtered Rows as Filled Portion of Total (by mit and range)",
+    x = "Range Midpoint",
+    y = "Number of Rows"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+
+
+# Stacked bars with dodge by `mit`
+ggplot(df_long, aes(x = range_mid, y = count, fill = part, group = interaction(mit, part))) +
+  geom_bar(stat = "identity", position = position_dodge(preserve = "single", width = 0.8)) +
+  scale_fill_manual(
+    values = c("Available" = "steelblue", "Unavailable" = "gray90"),
+    name = "Rows",
+    labels = c("Available", "Unavailable")
+    )+
+  labs(
+    title = "Total Rows with Filtered Portion, Dodged by mit",
+    x = "Range Midpoint",
+    y = "Row Count",
+    fill = "Filter Status"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
+
+```
+
+```{r}
+
+# Stacked bars with facetting by `mit`
+ggplot(df_long) +
+  geom_bar(aes(x = mit, y = count, fill = part),
+           position = "stack",
+           stat = "identity") +
+  facet_grid(~ range_mid, switch = "x") +
+  theme(strip.placement = "outside",
+        strip.background = element_rect(fill = NA, color = "white"),
+        panel.spacing = unit(-.01,"cm")) 
+```
+```{r}
+library(ggplot2)
+library(ggpattern)
+
+p <- ggplot(df_long %>% dplyr::filter(count < 1e13) 
+  ) +
+  geom_bar_pattern(aes(x = interaction(mit,range_mid,sep =" "),
+                       pattern_density = mit, y = count, 
+                       fill = part),
+                     pattern='stripe',
+                   pattern_scale   = 0.1,
+                   pattern_fill    = 'white',
+                   pattern_size =.04,
+                   pattern_alpha	=.7,
+                   pattern_frequency	=.1,
+                   pattern_spacing	= 0.01,
+           position = "stack", stat = "identity") +
+ scale_x_discrete(labels = function(x) {
+    sapply(x, function(val) {
+      parts <- strsplit(as.character(val), " ")[[1]]
+       range_val <- trunc(abs(log2(as.numeric(parts[2]))))
+     # paste0("m", parts[1], " ", range_val)
+       range_val
+    })
+  }) +   coord_flip()  +
+  labs(x = "Degree Relative", y = "Count", fill = "Part") + scale_fill_viridis_d(option = "D", direction =-1, begin = 0, end = .8)
+
+
+
+savep <- p + scale_y_continuous(labels = scales::label_comma(),breaks = waiver(),n.breaks = 6)+
+  theme_minimal() +
+  theme(legend.position = "bottom")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+savep
+ggsave(savep,filename = "slides\\00_bga_2025\\img\\stacked_bar_pattern.png", width = 10, height = 6, dpi = 300)
+
+savep <- p + scale_y_log10(labels = scales::label_log(),breaks = waiver(),n.breaks = 6)+
+  theme_minimal() +
+  theme(legend.position = "bottom")+
+   theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+savep
+ggsave(savep,
+       filename = "slides\\00_bga_2025\\img\\stacked_bar_pattern_log.png", width = 10, height = 6, dpi = 300)
+```
+```{r}
+p <- ggplot(df_long# %>% dplyr::filter(count < 1e13) 
+  ) +
+  geom_bar_pattern(aes(x = interaction(mit,range_mid,sep =" "),
+                       pattern_density = mit, y = count, 
+                       fill = part),
+                     pattern='stripe',
+                   pattern_scale   = 0.1,
+                   pattern_fill    = 'white',
+                   pattern_size =.04,
+                   pattern_alpha	=.7,
+                   pattern_frequency	=.1,
+                   pattern_spacing	= 0.01,
+           position = "stack", stat = "identity") +
+ scale_x_discrete(labels = function(x) {
+    sapply(x, function(val) {
+      parts <- strsplit(as.character(val), " ")[[1]]
+       range_val <- trunc(abs(log2(as.numeric(parts[2]))))
+     # paste0("m", parts[1], " ", range_val)
+       range_val
+    })
+  }) +   coord_flip()  +
+  labs(x = "Degree Relative", y = "Count", fill = "Part")   + scale_fill_viridis_d(option = "D", direction = -1, begin = 0, end = .8)
+
+savep <- p + scale_y_continuous(labels = scales::label_comma(),breaks = waiver(),n.breaks = 6)+
+  theme_minimal() +
+  theme(legend.position = "bottom")+
+   theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+savep
+ggsave(savep,filename = "slides\\00_bga_2025\\img\\stacked_bar_pattern_all.png", width = 10, height = 6, dpi = 300)
+
+savep <- p + scale_y_log10(labels = scales::label_log(),breaks = waiver(),n.breaks = 6)+
+  theme_minimal() +
+  theme(legend.position = "bottom")+
+   theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+savep
+ggsave(savep,filename = "slides\\00_bga_2025\\img\\stacked_bar_pattern_all_log.png", width = 10, height = 6, dpi = 300)
+
+
+
+savep <- p + scale_y_log10(labels = scales::label_log(),breaks = waiver(),n.breaks = 6)+   scale_fill_manual(
+    values = c("Available" = "#f2b3cf",#"#ffe6f2", 
+               "Unavailable" = "#f2b3cf"),#"#cff7e1"),
+    name = "Rows",
+    labels = c("Available", "Unavailable")
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")+
+   theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
+savep
+ggsave(savep,filename = "slides\\00_bga_2025\\img\\stacked_bar_pattern_all_log_filled.png", width = 10, height = 6, dpi = 300)
+
+```
+
+
+```{r}
+library(ggplot2)
+library(ggpedigree)
+library(tidyverse)
+df <- read_csv("slides\\00_bga_2025\\results.csv") %>% mutate(
+  mtdna_factor =  as.factor(mtdna)
+)
+
+names(df)
+savep <- ggPhenotypeByDegree(
+  df = df,
+  y_var = "Has_Dementia_phi_est",
+  y_ci_lb = "Has_Dementia_phi_LL",
+  y_ci_ub = "Has_Dementia_phi_UL",
+  config = list(
+    use_only_classic_kin = FALSE,
+    drop_classic_kin = FALSE,
+    group_by_kin = TRUE,
+    use_relative_degree = TRUE,
+    drop_non_classic_sibs = FALSE,
+    filter_degree_max = 12,
+    grouping_column = "mtdna_factor",
+    filter_n_pairs = 10,
+    annotate_include = FALSE
+  )
+) + #I want to add an watermark with a message 
+  
+  annotate("text",
+         label = "Don't interpret these values",
+         x = .5^4,
+         y = -.3,
+         angle = 21, size = 10, color = "gray15", alpha = 0.4)
+
+savep
+ggsave(savep,filename = "slides\\00_bga_2025\\img\\phis.png", width = 10, height = 6, dpi = 300)
+
+```
