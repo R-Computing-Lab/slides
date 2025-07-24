@@ -1,0 +1,126 @@
+---
+title: "Untitled"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(tidyverse)
+```
+
+
+```{r cars}
+
+library(oro.nifti) #for opening nii.gz files
+library(RColorBrewer) #for color palettes
+s_map1<-readNIfTI(system.file('seed_corr_1.nii.gz', package='ggBrain'))
+s_map2<-readNIfTI(system.file('seed_corr_2.nii.gz', package='ggBrain'))
+template <- readNIfTI(system.file('template.nii.gz', package='ggBrain'))
+mask <- readNIfTI(system.file('brain_mask.nii.gz', package='ggBrain'))
+seed_mask <- readNIfTI(system.file('seed_mask.nii.gz', package='ggBrain'))
+nii1_trunc <- readNIfTI(system.file('subj_trunc_1.nii.gz', package='ggBrain'))
+library(brainR)
+hd_template <- readNIfTI(system.file("MNI152_T1_1mm_brain.nii.gz", package="brainR"))
+library(ggplot2)
+#library(ggbrain)
+library(devtools)
+#install_github('aaronjfisher/ggBrain')
+library(ggBrain)
+dd <- ggBrain(brains=hd_template,mask=hd_template>0,mar=3,
+mar_ind=93,type='structural')
+
+
+#dd
+#now add aethetic changes with conventional ggplot code.
+savep <- dd + scale_fill_continuous(low="black", high="white")+ theme_black_bg() 
+ggsave(savep,filename = "slides\\02_neurodiversity\\img\\bw.png", dpi = 300)
+## to access help pages
+
+# Seed correlation map (stored in the array s_map1)
+# mar=3 selects the Transverse plane, and mar_ind=30 selects the slice index.
+#ddd<-ggBrain(brains=hd_template,mask=hd_template>0,
+#            mar=3,
+#    mar_ind=30,type='signed')
+
+dd<-ggBrain(brains=list(s_map1@.Data-.2,s_map2@.Data+.1),
+  brain_ind=c(1,1,1,2,2,2),
+    template=template,
+    mar=c(1,2,3,1,2,3),
+    mar_ind=c(37,18,30,37,18,30),
+    row_ind=c('ADHD','ADHD','ADHD','Normal','Normal','Normal'),
+    col_ind=factor(c(1,2,3,1,2,3),labels=c('Sagittal','Coronal','Transverse')),
+    mask=mask,type='signed',
+    signed_colors = brewer.pal(9, 'RdYlGn')[c(1, 9)])
+    
+    #E:/Dropbox/Lab/Research/Presentations/slides/slides/02_neurodiversity/d00_slide.Rmd
+
+ savep <- dd + ggtitle('Abnormal Activation (ADHD) vs Normal Brain Activation') +
+  labs(subtitle="Red = Abnormal Activation, Green = Healthy Normal Brain Activation",
+       caption="Extensive caption with irrelevant details to add visual clutter and cognitive overload. See supplemental material for additional unnecessary details.") +
+  theme(
+    plot.title = element_text(size = 10, color = "red", face="bold", family="Comic Sans MS"),
+    plot.subtitle = element_text(size = 9, color =  "red", family="Comic Sans MS"),
+    plot.caption = element_text(size = 6, color = "grey60", family="Comic Sans MS"),
+    legend.title = element_text(size=6, family="Comic Sans MS"),
+    legend.text = element_text(size=5, family="Comic Sans MS"),
+    panel.background = element_rect(fill="black"),
+    plot.background = element_rect(fill="grey20"),
+    panel.grid.major = element_line(color="grey70", size=0.8),
+    panel.grid.minor = element_line(color="grey50", linetype="dotted"))
+
+
+
+ggsave(savep,filename = "slides\\02_neurodiversity\\img\\lessnice.png", dpi = 300)
+
+```
+```{r}
+
+
+
+
+library(ggBrain)
+library(RColorBrewer)
+
+# Define neutral palette (e.g., viridis)
+library(viridisLite)
+neutral_colors <- viridis(9)
+
+# Generate revised seed correlation maps
+dd <- ggBrain(
+  brains = list(s_map1@.Data - 0.2, s_map2@.Data + 0.1),
+  brain_ind = c(1,1,1,2,2,2),
+  template = template,
+  mar = c(1,2,3,1,2,3),
+  mar_ind = c(37,18,30,37,18,30),
+  row_ind = c('Pattern A','Pattern A','Pattern A','Pattern B','Pattern B','Pattern B'),
+  col_ind = factor(c(1,2,3,1,2,3), labels = c('Sagittal','Coronal','Transverse')),
+  mask = mask,
+  type = 'signed',
+  signed_colors = neutral_colors[c(2, 7)] # Midpoints from neutral palette
+) 
+
+# Accessible theme and captions
+savep <- dd + 
+  ggtitle('Seed Correlation Maps Showing Two Neural Activation Patterns') + 
+  labs(caption = "Patterns represent two commonly observed neurodevelopmental variations, illustrating differences without implying deficit or dysfunction.") +
+  theme_minimal(base_size = 14)
+
+# Save revised plot with neutral presentation
+ggsave(savep, filename = "slides/02_neurodiversity/img/revised_seed_correlation.png", dpi = 300)
+
+ddd<-ggBrain(brains=list(s_map1@.Data-.2,s_map2@.Data+.1),
+  brain_ind=c(1,1,1,2,2,2),
+    template=template,
+    mar=c(1,2,3,1,2,3),
+    mar_ind=c(37,18,30,37,18,30),
+    row_ind=c('ADHD','ADHD','ADHD','Typical','Typical','Typical'),
+    col_ind=factor(c(1,2,3,1,2,3),labels=c('Sagittal','Coronal','Transverse')),
+    mask=mask,type='signed',
+    signed_colors = brewer.pal(9, 'PRGn')[c(1, 9)])
+ggsave(savep,filename = "slides\\02_neurodiversity\\img\\morenice.png", dpi = 300)
+
+```
