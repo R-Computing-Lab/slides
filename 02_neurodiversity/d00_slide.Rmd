@@ -53,7 +53,7 @@ BibOptions(check.entries = FALSE, style = "markdown")
 
 - A neuroscience student sees their own ADHD brain highlighted in red on a slide labeled "dysfunction."
 - A blind student listens to a neuroanatomy lecture where every description assumes vision.
-- A Deaf student reads a textbook that never mentions sign language as a valid communication mode.
+- A d/Deaf student reads a textbook that never mentions sign language as a valid communication mode.
 ???
 
 Script: Picture these scenarios. A neuroscience student—maybe in your class—sees themselves presented as pathology. What do they learn? Not just about ADHD, but about their place in science, their capacity for learning, their fundamental worth.
@@ -290,9 +290,10 @@ knitr::include_graphics("img/lessnice.png")
 
 --
 
-*Result: Blind, deaf, neurodivergent students learn their brains are broken*
+*Result: Blind, d/Deaf, neurodivergent students learn their brains are broken*
 
 ---
+
 
 ## AFTER: Inclusive Variation Model
 .pull-left[
@@ -319,6 +320,20 @@ knitr::include_graphics("img/morenice.png")
 ???
 
 Script: Here's what transformation looks like in practice. Same research findings, same brain imaging data, but presented through two different frameworks. The deficit model on the left locates problems in the individual brain—everything is broken, impaired, abnormal. The neurodiversity model on the right treats the same patterns as organizational differences that might need different supports. Notice I haven't changed the science—the research is identical. But I have changed the framing, the language, and the visual design. And that changes everything about what students learn.
+
+---
+
+## Zoom In: Deficit Model
+```{r, echo=FALSE, out.height="95%", fig.align='center'}
+knitr::include_graphics("img/lessnice.png")
+```
+
+---
+
+## Zoom In: Difference Model
+```{r, echo=FALSE, out.height="95%", fig.align='center'}
+knitr::include_graphics("img/morenice.png")
+```
 
 ---
 
