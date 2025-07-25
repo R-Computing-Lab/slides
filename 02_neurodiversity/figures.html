@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2025-07-24" />
+<meta name="date" content="2025-07-25" />
 
 <title>Untitled</title>
 
@@ -350,7 +350,7 @@ display: none;
 
 
 <h1 class="title toc-ignore">Untitled</h1>
-<h4 class="date">2025-07-24</h4>
+<h4 class="date">2025-07-25</h4>
 
 </div>
 
@@ -408,12 +408,12 @@ dd&lt;-ggBrain(brains=list(s_map1@.Data-.2,s_map2@.Data+.1),
     
     #E:/Dropbox/Lab/Research/Presentations/slides/slides/02_neurodiversity/d00_slide.Rmd
 
- savep &lt;- dd + ggtitle(&#39;Abnormal (ADHD) vs Normal Brain Patterns (Activation)&#39;) +
+ savep &lt;- dd + ggtitle(&#39;Abnormal Activation (ADHD) vs Normal Brain Activation&#39;) +
   labs(subtitle=&quot;Red = Abnormal Activation, Green = Healthy Normal Brain Activation&quot;,
        caption=&quot;Extensive caption with irrelevant details to add visual clutter and cognitive overload. See supplemental material for additional unnecessary details.&quot;) +
   theme(
     plot.title = element_text(size = 10, color = &quot;red&quot;, face=&quot;bold&quot;, family=&quot;Comic Sans MS&quot;),
-    plot.subtitle = element_text(size = 9, color = &quot;darkorange&quot;, family=&quot;Comic Sans MS&quot;),
+    plot.subtitle = element_text(size = 9, color =  &quot;red&quot;, family=&quot;Comic Sans MS&quot;),
     plot.caption = element_text(size = 6, color = &quot;grey60&quot;, family=&quot;Comic Sans MS&quot;),
     legend.title = element_text(size=6, family=&quot;Comic Sans MS&quot;),
     legend.text = element_text(size=5, family=&quot;Comic Sans MS&quot;),
@@ -465,8 +465,13 @@ ggsave(savep, filename = &quot;slides/02_neurodiversity/img/revised_seed_correla
     mar_ind=c(37,18,30,37,18,30),
     row_ind=c(&#39;ADHD&#39;,&#39;ADHD&#39;,&#39;ADHD&#39;,&#39;Typical&#39;,&#39;Typical&#39;,&#39;Typical&#39;),
     col_ind=factor(c(1,2,3,1,2,3),labels=c(&#39;Sagittal&#39;,&#39;Coronal&#39;,&#39;Transverse&#39;)),
-    mask=mask,type=&#39;signed&#39;,
+    mask=mask,
+  type=&#39;signed&#39;,
     signed_colors = brewer.pal(9, &#39;PRGn&#39;)[c(1, 9)])
+
+savep &lt;- ddd + 
+  ggtitle(&#39;Seed Correlation Maps Showing Two Neural Activation Patterns&#39;) + 
+  labs(caption = &quot;Patterns represent two commonly observed neurodevelopmental variations&quot;) +  theme_minimal(base_size = 14)
 ggsave(savep,filename = &quot;slides\\02_neurodiversity\\img\\morenice.png&quot;, dpi = 300)</code></pre>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 

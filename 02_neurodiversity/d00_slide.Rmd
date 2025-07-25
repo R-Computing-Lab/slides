@@ -54,6 +54,9 @@ BibOptions(check.entries = FALSE, style = "markdown")
 - A neuroscience student sees their own ADHD brain highlighted in red on a slide labeled "dysfunction."
 - A blind student listens to a neuroanatomy lecture where every description assumes vision.
 - A Deaf student reads a textbook that never mentions sign language as a valid communication mode.
+???
+
+Script: Picture these scenarios. A neuroscience student—maybe in your class—sees themselves presented as pathology. What do they learn? Not just about ADHD, but about their place in science, their capacity for learning, their fundamental worth.
 --
 
 - .hand-blue[What do they learn about themselves? And what do they learn about who belongs in science?]
@@ -61,12 +64,9 @@ BibOptions(check.entries = FALSE, style = "markdown")
 
 - But what if we designed neuroscience education for all kinds of minds and bodies from the start?
 
-
-
 ???
 
 Script: Picture these scenarios. A neuroscience student—maybe in your class—sees themselves presented as pathology. What do they learn? Not just about ADHD, but about their place in science, their capacity for learning, their fundamental worth.
-
 
 ---
 
@@ -78,6 +78,10 @@ Script: Picture these scenarios. A neuroscience student—maybe in your class—
   knitr::include_graphics("img/whobelongs.png")
 ```
 ]
+
+???
+
+My name is S. Mason Garrison, and I'm from Wake Forest University.  I'm here today to talk about how we teach neurodevelopmental disabilities—and I'm bringing three perspectives to this conversation. First, as someone who teaches data visualization, I spend a lot of time thinking about how our visual and linguistic choices shape understanding. Second, although I'm trained as a quantitative psychologist, I dabble in disability studies, which has taught me to question assumptions about whose minds and bodies we design for. And third, I'm neurodivergent myself, which means I have lived experience navigating systems that weren't built for brains like mine. Today I want to show you how we can teach the same rigorous neuroscience in ways that affirm rather than stigmatize human neurological variation.
 --
 
 .pull-right[
@@ -94,9 +98,6 @@ plot(code)
 ]
 
 ???
-My name is S. Mason Garrison, and I'm from Wake Forest University.  I'm here today to talk about how we teach neurodevelopmental disabilities—and I'm bringing three perspectives to this conversation. First, as someone who teaches data visualization, I spend a lot of time thinking about how our visual and linguistic choices shape understanding. Second, although I'm trained as a quantitative psychologist, I dabble in disability studies, which has taught me to question assumptions about whose minds and bodies we design for. And third, I'm neurodivergent myself, which means I have lived experience navigating systems that weren't built for brains like mine. Today I want to show you how we can teach the same rigorous neuroscience in ways that affirm rather than stigmatize human neurological variation.
- 
-
 
 I want to talk with you about how we might teach neurodevelopmental conditions in ways that are more inclusive, more accurate, and less stigmatizing. The core of this talk focuses on ADHD, autism, and related conditions, but I want to suggest that the neurodiversity paradigm invites us to think more broadly—about sensory differences like blindness and Deafness, about alternative communication methods, about the full spectrum of human neurological variation. As educators, the language we use, the examples we give, the way we visualize brain differences—all of this profoundly shapes what our students take away, not just about neuroscience, but about the value and belonging of neurodivergent people.
 
@@ -109,20 +110,23 @@ I want to talk with you about how we might teach neurodevelopmental conditions i
 When neuroscience courses use deficit language and pathologizing visuals, students learn:
 
 --
-.pull-left[
-.hand-blue.big[About neurodivergent people:]
+.pull-left.medi[
+.hand-blue[About neurodivergent people:]
 - Different brains = broken brains
 - Neurodivergence = medical problem
 - Support = pity or burden
 - Accommodation = special treatment
 
-.hand-blue.big[About science:]
+.hand-blue[About science:]
 - One brain pattern = optimal
 - Difference = dysfunction
 - Visual learning is presumed universal
 - Intervention goal = normalization
 - Accommodation = exception, not design
 ]
+???
+
+Script: Before we talk about solutions, let's acknowledge what our current approaches actually teach. When every brain image highlights deficits in red, when every example focuses on dysfunction, when every intervention aims to normalize—we're teaching a hidden curriculum about worth, belonging, and scientific authority. Students learn that difference equals deficiency, that their own brains might be problems to solve rather than minds capable of doing science. This isn't intentional, but it's systematic. And it has real consequences for who stays in our fields and who feels welcome in our classrooms.
 --
 .pull-right[
 .hand-blue.big[About themselves:]
@@ -143,14 +147,15 @@ Script: Before we talk about solutions, let's acknowledge what our current appro
 # What This Talk Will Cover
 
 <!-- Slide 3: Clear roadmap -->
-.med[
+.large[
 1. **Problem**: How conventional tools reinforce narrow models of ability  
 2. **Transformation**: A detailed before/after case study showing the same content reframed
 3. **Solution**: Systematic strategies for inclusive, disability-affirming pedagogy
 4. **Implementation**: Concrete steps you can take this week, this month, this semester
-
-**Goal**: Leave with tools you can use immediately to make your neuroscience teaching more inclusive
 ]
+--
+**Goal**: Leave with tools you can use immediately to make your neuroscience teaching more inclusive
+
 ???
 
 Script: Here's where we're headed. First, I'll show you exactly how conventional teaching tools embed deficit assumptions—even when we think we're being neutral. Then I'll walk through a detailed transformation of actual course content, showing you the same neuroscience presented two different ways. Next, we'll systematize this into concrete strategies you can apply across your teaching. Finally, I'll give you a practical implementation timeline so you can start making changes immediately. My goal is that you leave with specific tools, not just good intentions.
@@ -165,7 +170,6 @@ Script: Here's where we're headed. First, I'll show you exactly how conventional
 - Conditions like ADHD and autism are portrayed as problems to be fixed.
 - Sensory disabilities like blindness are portrayed as problems to be accommodated.
 - This reinforces stigma and ignores the lived experience of disabled people.
-
 
 ???
 <!-- Slide 2: Deficit framing -->
@@ -225,7 +229,9 @@ __Visual Design That Excludes__
 - Color-only coding that excludes colorblind students
 - Anatomical models only available visually
 ]
+???
 
+Script: Let me show you how deficit thinking gets embedded in our teaching materials. As someone who teaches data visualization, I notice that neuroscience education makes design choices that encode judgments about the data. Red highlighting for brain differences implies danger or deficiency. Language like "impaired pathways" locates problems in individuals rather than systems. These choices seem scientifically neutral, but they're not. They teach students that different brain patterns are broken brain patterns. And this matters because many of our students have these same brain patterns—we're teaching them that they're fundamentally flawed.
 --
 .pull-right[
 __Language That Pathologizes__
@@ -252,7 +258,6 @@ __Language That Pathologizes__
 - **Students who navigate differently are treated as exceptions**
 - **We rarely ask: What if we designed for all kinds of minds and bodies from the start?**
 ]
-
 ???
 
 Script: Let me show you how deficit thinking gets embedded in our teaching materials. As someone who teaches data visualization, I notice that neuroscience education makes design choices that encode judgments about the data. Red highlighting for brain differences implies danger or deficiency. Language like "impaired pathways" locates problems in individuals rather than systems. These choices seem scientifically neutral, but they're not. They teach students that different brain patterns are broken brain patterns. And this matters because many of our students have these same brain patterns—we're teaching them that they're fundamentally flawed.
@@ -302,7 +307,7 @@ knitr::include_graphics("img/lessnice.png")
 
 .pull-right[
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
+```{r, echo=FALSE, out.width="95%", fig.align='center'}
 knitr::include_graphics("img/morenice.png")
 
 ```
@@ -311,7 +316,6 @@ knitr::include_graphics("img/morenice.png")
 ]
 
 **Same neuroscience, radically different message about human worth**
-
 ???
 
 Script: Here's what transformation looks like in practice. Same research findings, same brain imaging data, but presented through two different frameworks. The deficit model on the left locates problems in the individual brain—everything is broken, impaired, abnormal. The neurodiversity model on the right treats the same patterns as organizational differences that might need different supports. Notice I haven't changed the science—the research is identical. But I have changed the framing, the language, and the visual design. And that changes everything about what students learn.
@@ -341,6 +345,9 @@ Script: Here's what transformation looks like in practice. Same research finding
 - Problem in person → Person-environment interaction
 - Fix the brain → Optimize the system
 ]
+???
+
+Script: Let's analyze exactly what I changed and why it produces different outcomes. The language shifts are systematic—every deficit term becomes a difference term. The visual shifts matter enormously—red signals danger while blue signals interesting variation. But the biggest change is conceptual: we've moved from a medical model that locates problems in individuals to an ecological model that examines person-environment interactions. And this produces measurable changes in student behavior. When I piloted this approach, students told me it was the first time they'd seen their brains discussed without shame. More importantly, they started participating, self-advocating, and pursuing research in the field instead of leaving it.
 ---
 
 ## What Changed and Why It Matters
@@ -360,19 +367,25 @@ Script: Here's what transformation looks like in practice. Same research finding
 
 **This aligns with broader inclusive pedagogy research showing representation affects belonging**
 ]
-
 ???
 
 Script: Let's analyze exactly what I changed and why it produces different outcomes. The language shifts are systematic—every deficit term becomes a difference term. The visual shifts matter enormously—red signals danger while blue signals interesting variation. But the biggest change is conceptual: we've moved from a medical model that locates problems in individuals to an ecological model that examines person-environment interactions. And this produces measurable changes in student behavior. When I piloted this approach, students told me it was the first time they'd seen their brains discussed without shame. More importantly, they started participating, self-advocating, and pursuing research in the field instead of leaving it.
 
 ---
 
+class: middle
+
 # Systematic Solution 1: Universal Design Framework
 
+---
 
+# Universal Design Framework
 - Proactively designing course materials to be accessible to all students, regardless of their sensory or cognitive processing styles.
 - Incorporating multiple means of representation, engagement, and expression in all aspects of teaching.
 - Continuously assessing and iterating on course design based on student feedback and diverse needs.
+???
+
+Script: Now let's systematize this approach. Universal Design for Learning provides a framework for building variation into your courses from the beginning. The key insight is that when you design for students at the margins—blind students, deaf students, neurodivergent students—you actually improve the experience for everyone. Captions help not just deaf students but also students in noisy environments. Multiple assessment formats help not just students with learning differences but also students with different strengths. This isn't about lowering standards—it's about providing multiple pathways to demonstrate the same rigorous learning.
 
 ---
 
@@ -421,7 +434,11 @@ Script: Now let's systematize this approach. Universal Design for Learning provi
 
 ---
 
+class:middle
+
 # Systematic Solution 2: Language and Visual Design
+
+---
 
 <!-- Slide 8: Concrete language/visual guidelines -->
 ## Language Audit Framework
@@ -434,6 +451,9 @@ Script: Now let's systematize this approach. Universal Design for Learning provi
 - "Abnormal" → "Pattern A/B"
 - "Disorder" → "condition" or "neurotype"
 ]
+???
+
+Script: Here's a concrete framework you can apply immediately. The language audit should be systematic, not intuitive. I use two tests: first, would I use this language to describe my own brain? Second, does this language center pathology or the whole person? For visuals, remember that design choices encode values. When you consistently use red for brain differences, you're teaching students that difference equals danger. When you use neutral scientific colors, you're teaching them that difference equals variation. Both approaches are scientifically valid—but only one is ethically responsible.
 --
 
 .pull-right[
@@ -442,7 +462,6 @@ Script: Now let's systematize this approach. Universal Design for Learning provi
 ]
 ---
 
-# Systematic Solution 2: Language and Visual Design
 ## Visual Design Principles
 
 .pull-left[
@@ -452,6 +471,10 @@ Script: Now let's systematize this approach. Universal Design for Learning provi
 - Show multiple variations as equally interesting
 - Never rely solely on color to convey information
 ]
+???
+
+Script: Here's a concrete framework you can apply immediately. The language audit should be systematic, not intuitive. I use two tests: first, would I use this language to describe my own brain? Second, does this language center pathology or the whole person? For visuals, remember that design choices encode values. When you consistently use red for brain differences, you're teaching students that difference equals danger. When you use neutral scientific colors, you're teaching them that difference equals variation. Both approaches are scientifically valid—but only one is ethically responsible.
+--
 .pull-right[
 **For all materials:**
 - Consistent layouts reduce cognitive load
@@ -461,15 +484,17 @@ Script: Now let's systematize this approach. Universal Design for Learning provi
 
 **Design principle: Make differences look interesting, not alarming**
 ]
-
 ???
 
 Script: Here's a concrete framework you can apply immediately. The language audit should be systematic, not intuitive. I use two tests: first, would I use this language to describe my own brain? Second, does this language center pathology or the whole person? For visuals, remember that design choices encode values. When you consistently use red for brain differences, you're teaching students that difference equals danger. When you use neutral scientific colors, you're teaching them that difference equals variation. Both approaches are scientifically valid—but only one is ethically responsible.
 
 ---
 
+class:middle
 
 # Systematic Solution 3: Inclusive Neuroscience Strategies
+
+---
 
 <!-- Slide 9: Field-specific implementations for all kinds of variation -->
 ## For All Neurological Content
@@ -480,15 +505,19 @@ Script: Here's a concrete framework you can apply immediately. The language audi
 - Include tactile models and audio alternatives
 - Use consistent, accessible color schemes
 - Show individual variation within neurotypes
+???
+
+Script: Here are specific strategies for neuroscience education. In neuroanatomy, don't just show the brain—describe it aloud for students who can't see or prefer auditory processing. In neuropharmacology, frame medications as optimization tools rather than fixes for broken brains. In research methods, question your assumptions about control groups and normal populations. The goal isn't to water down the science—it's to remove barriers that prevent students from accessing and demonstrating their neuroscience knowledge. These changes benefit everyone, not just disabled students.
 ---
 
-# Inclusive Neuroscience Strategies
 ## For Sensory & Perceptual Systems
 - Frame blindness as enhanced neural plasticity, not "loss"
-- Present deafness as cultural/linguistic variation, not deficit
+- Present Deafness as cultural/linguistic variation, not deficit
 - Discuss sensory processing differences as variations in threshold and integration
 - Include examples of how different sensory profiles contribute to scientific discovery
+???
 
+Script: Here are specific strategies for neuroscience education. In neuroanatomy, don't just show the brain—describe it aloud for students who can't see or prefer auditory processing. In neuropharmacology, frame medications as optimization tools rather than fixes for broken brains. In research methods, question your assumptions about control groups and normal populations. The goal isn't to water down the science—it's to remove barriers that prevent students from accessing and demonstrating their neuroscience knowledge. These changes benefit everyone, not just disabled students.
 ---
 
 ## For Lab Work & Assessment
@@ -496,6 +525,9 @@ Script: Here's a concrete framework you can apply immediately. The language audi
 - Instructions available in visual, auditory, and written formats
 - Alternative ways to record observations?
 - Labs accessible to different mobility and sensory profiles
+???
+
+Script: Here are specific strategies for neuroscience education. In neuroanatomy, don't just show the brain—describe it aloud for students who can't see or prefer auditory processing. In neuropharmacology, frame medications as optimization tools rather than fixes for broken brains. In research methods, question your assumptions about control groups and normal populations. The goal isn't to water down the science—it's to remove barriers that prevent students from accessing and demonstrating their neuroscience knowledge. These changes benefit everyone, not just disabled students.
 --
 
 ## For Research Methods
@@ -508,10 +540,6 @@ Script: Here's a concrete framework you can apply immediately. The language audi
 
 - **Goal: Remove barriers that prevent any student from demonstrating neuroscience knowledge**
 
-
-???
-
-Script: Here are specific strategies for neuroscience education. In neuroanatomy, don't just show the brain—describe it aloud for students who can't see or prefer auditory processing. In neuropharmacology, frame medications as optimization tools rather than fixes for broken brains. In research methods, question your assumptions about control groups and normal populations. The goal isn't to water down the science—it's to remove barriers that prevent students from accessing and demonstrating their neuroscience knowledge. These changes benefit everyone, not just disabled students.
 
 ---
 
@@ -572,7 +600,13 @@ Script: Here's how to actually implement these changes without overwhelming your
 - Try tactile models for 3D brain structures
 - Offer multiple ways to participate in discussions
 ]
+
+???
+
+Script: Here's how to actually implement these changes without overwhelming yourself. Start small—five minutes a day for the first week. The language audit alone will shock you with how casually we pathologize different brains. But don't stop there. The bigger changes take more planning but have exponential impact. When you redesign assignments to offer multiple formats, you're not just helping disabled students—you're allowing all students to play to their strengths. And when you connect with colleagues, you start building a culture of inclusion that extends beyond your individual classroom.
+
 ---
+
 ## This Month (Bigger changes)
 
 .pull-left-wide[
@@ -593,9 +627,12 @@ Script: Here's how to actually implement these changes without overwhelming your
 
 ---
 
+class:middle
+
 # This Semester and Beyond
 
 <!-- Slide 11: Long-term implementation -->
+
 ---
 
 ## This Semester
@@ -664,41 +701,33 @@ class:middle
 
 
 ## "This sounds like a lot of extra work"
-**Reality:** Universal design reduces individual accommodation requests
-
-**Data point:** Accessible courses generate fewer accommodation letters
-
-**Efficiency gain:** Clear structure and multiple formats help all students learn better
+- **Reality:** Universal design reduces individual accommodation requests
+- **Data point:** Students can access materials independently, reducing faculty workload
+- **Commentary:** Also pays off when that accommodation request comes in
+- **Efficiency gain:** Clear structure and multiple formats help all students learn better
 
 ---
 
 ## "What about maintaining academic rigor?"
-**Key insight:** Rigor = high expectations + appropriate support
-
-**Evidence:** Accessibility increases engagement without lowering standards
-
-**Reframe:** Are we measuring neuroscience knowledge or test-taking ability?
+- **Key insight:** Rigor = high expectations + appropriate support
+- **Evidence:** Accessibility increases engagement without lowering standards
+- **Reframe:** Are we measuring neuroscience knowledge or test-taking ability?
 
 ---
 
 ## "How do I assess fairly if everyone gets different formats?"
-**Core principle:** Fair ≠ identical; fair = equitable access to demonstrate knowledge
-
-**Better question:** Do my assessments measure what I want them to measure?
-
-**Research finding:** Multiple measures provide better data about student learning
+- **Core principle:** Fair ≠ identical; fair = equitable access to demonstrate knowledge
+- **Better question:** Do my assessments measure what I want them to measure?
+- **Research finding:** Multiple measures provide better data about student learning
 
 ---
 
 ## "What if students take advantage of accommodations?"
-**Response:** Students generally request what they need, not what they want
-
-**Flip the question:** What if we trusted students to know their own learning needs?
-
-**Outcome:** Self-advocacy skills that benefit students throughout their careers
+- **Response:** Students generally request what they need, not what they want
+- **Flip the question:** What if we trusted students to know their own learning needs?
+- **Outcome:** Self-advocacy skills that benefit students throughout their careers
 
 ???
-
 Script: I get these questions every time I present this material, and I understand the concerns. Change feels risky, especially when you're responsible for rigorous scientific training. But let me reframe these as design challenges rather than obstacles. When faculty worry about extra work, I show them that well-designed accessible courses actually reduce their workload because students can access materials independently. When they worry about rigor, I remind them that rigor isn't standardization—it's clarity plus support. And when they worry about students taking advantage, I ask: what would our field look like if we trusted students to know their own learning needs?
 
 ---
@@ -715,7 +744,9 @@ Script: I get these questions every time I present this material, and I understa
 - Neurodivergence contributes valuable perspectives to science
 - Alternative communication methods are fully legitimate
 - Environmental barriers often create "disability," not the person
+???
 
+Script: When you change how you teach neuroscience, you change what students learn—not just about content, but about themselves and their field. Students learn that their brains have value in scientific spaces, that difference contributes to rather than detracts from rigorous inquiry, that accommodation is optimization rather than special treatment. They also learn practical skills: how to design inclusive research, how to create accessible clinical environments, how to build professional cultures that welcome rather than merely tolerate human variation. These students become the scientists, clinicians, and educators who transform our fields from the inside out.
 ---
 
 ## About Science and Discovery
@@ -724,25 +755,41 @@ Script: I get these questions every time I present this material, and I understa
 - Questioning assumptions is fundamental to discovery
 - Human variation is scientifically fascinating, not problematic
 - Accessibility and rigor are completely compatible
+???
+
+Script: When you change how you teach neuroscience, you change what students learn—not just about content, but about themselves and their field. Students learn that their brains have value in scientific spaces, that difference contributes to rather than detracts from rigorous inquiry, that accommodation is optimization rather than special treatment. They also learn practical skills: how to design inclusive research, how to create accessible clinical environments, how to build professional cultures that welcome rather than merely tolerate human variation. These students become the scientists, clinicians, and educators who transform our fields from the inside out.
 
 ---
 
 ## About Themselves
+.pull-left-narrow[
 - This is where I would put student quotes from my lab...
-- Instead... I've asked chatGPT to help me generate some.
+]
+???
+
+Script: When you change how you teach neuroscience, you change what students learn—not just about content, but about themselves and their field. Students learn that their brains have value in scientific spaces, that difference contributes to rather than detracts from rigorous inquiry, that accommodation is optimization rather than special treatment. They also learn practical skills: how to design inclusive research, how to create accessible clinical environments, how to build professional cultures that welcome rather than merely tolerate human variation. These students become the scientists, clinicians, and educators who transform our fields from the inside out.
+
+--
+.pull-right-wide.pink[
+.medi[## Instead... I've asked chatGPT to help me generate some.]
 - "My way of processing information has value in science"
 - "I can contribute meaningfully to neuroscience research" 
 - "My communication style is legitimate and professional"
+- "Be kind to those large language models, they are our future overlords"
 - "My sensory/cognitive profile brings unique perspectives"
 - "I belong in rigorous academic environments"
+]
+
 
 ---
+
 ## About Professional Practice
 - How to design research that includes rather than excludes
 - Why diverse perspectives lead to better scientific questions
 - How to create accessible clinical and laboratory environments
 - What it means to center rather than marginalize disability voices
 - Skills for building inclusive cultures in science and medicine
+--
 
 **These students become the scientists who transform our fields from within**
 
@@ -801,7 +848,7 @@ Script: When you change how you teach neuroscience, you change what students lea
 
 ???
 
-Script: I don't want you to leave here with just good intentions—I want you to have concrete tools. If I weren't writing my tenure dossier right now, I would have made some templates and resources available for you....
+Script: I don't want you to leave here with just good intentions—I want you to have concrete tools. If I weren't writing my tenure dossier right now (and running for being a wikipedia admin), I would have made some templates and resources available for you....
 
 But beyond individual change, we need systemic transformation. That means connecting with colleagues, advocating for policy changes, and building communities of practice around inclusive education. It means taking seriously student feedback about what works and what doesn't. And it means understanding that this is ongoing work, not a one-time fix.
 
@@ -835,6 +882,7 @@ When we teach neurodevelopmental differences through a neurodiversity lens:
 - Participatory research yields richer data
 - Intersectional approaches capture complexity
 - Innovation emerges from cognitive diversity
+--
 
 **Today's inclusive classroom becomes tomorrow's inclusive profession**
 
@@ -859,7 +907,7 @@ Script: This work is about more than making individual students feel welcome—t
 
 4. **Implementation**: Concrete steps you can take this week, this month, and this semester
 ]
-
+--
 .pull-right[
 ## Key principles
 - **Design for variation, not exceptions**

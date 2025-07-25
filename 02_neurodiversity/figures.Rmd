@@ -119,8 +119,13 @@ ddd<-ggBrain(brains=list(s_map1@.Data-.2,s_map2@.Data+.1),
     mar_ind=c(37,18,30,37,18,30),
     row_ind=c('ADHD','ADHD','ADHD','Typical','Typical','Typical'),
     col_ind=factor(c(1,2,3,1,2,3),labels=c('Sagittal','Coronal','Transverse')),
-    mask=mask,type='signed',
+    mask=mask,
+  type='signed',
     signed_colors = brewer.pal(9, 'PRGn')[c(1, 9)])
+
+savep <- ddd + 
+  ggtitle('Seed Correlation Maps Showing Two Neural Activation Patterns') + 
+  labs(caption = "Patterns represent two commonly observed neurodevelopmental variations") +  theme_minimal(base_size = 14)
 ggsave(savep,filename = "slides\\02_neurodiversity\\img\\morenice.png", dpi = 300)
 
 ```
