@@ -806,6 +806,7 @@ Script: When you change how you teach neuroscience, you change what students lea
 - Skills for building inclusive cultures in science and medicine
 --
 
+<p/>
 **These students become the scientists who transform our fields from within**
 
 
@@ -836,6 +837,7 @@ Script: When you change how you teach neuroscience, you change what students lea
 - Campus accessibility training
 - Inclusive teaching communities
 ]
+
 **Suggested reading:** Walker (2021), Minich (2016), Schalk (2017)
 
 ---
@@ -853,7 +855,7 @@ Script: When you change how you teach neuroscience, you change what students lea
 - Propose policy changes for flexibility
 - Support disabled students in your programs
 - Challenge ableist assumptions in hiring
-
+]
 .pull-right[
 **Student feedback:**
 - Regular check-ins about what's working
