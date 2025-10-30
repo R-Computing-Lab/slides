@@ -418,7 +418,7 @@ class: middle
 --
 
 .pull-right[
-Not: (even though you spent hours on it)
+*Not: (even though you spent hours on it)*
 - Whether your references are properly formatted
 - Your font choices
 - Every statistical detail
@@ -435,6 +435,7 @@ Not: (even though you spent hours on it)
 
 
 ---
+
 ## Any Questions?
 
 Feel free to ask any questions now, or reach out to me after the talk via email _garrissm@wfu.edu_ or on github _github.com/smasongarrison_ or well, Greene 438
