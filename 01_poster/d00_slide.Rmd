@@ -325,6 +325,42 @@ class: middle, center
 - Great feedback received
 ]
 
+
+---
+
+# Coda
+
+```{r echo=FALSE, out.height="80%"}
+knitr::include_graphics("img/paper_funny_twins.png")
+```
+
+---
+
+class: middle, center, inverse
+
+# Your Turn!
+
+.center[
+### Let's practice the art of the poster
+]
+
+---
+
+# Practice Exercise
+1. Partner up
+2. Devise a plan:
+   - To craft a poster in 5 minutes
+   - Using only whiteboard and markers
+3. Pick a topic:
+   - Halloween
+   - Research on cats
+4. Draft your poster!
+
+
+---
+
+# Next: The Pitch
+
 ---
 
 class: middle, center, inverse
@@ -337,27 +373,16 @@ class: middle, center, inverse
 
 ---
 
-# Practice Exercise
-1. Partner up
-2. Take turns:
-   - 30-second version
-   - 2-minute version
-   - Q&A practice?
-3. Feedback focus:
-   - Clarity
-   - Engagement
-   - Time management
 
+# Find a new poster!
 
----
-
-# Do you need a poster to pitch?
 
 .center[
 ```{r echo=FALSE, out.width="70%"}
 knitr::include_graphics("img/posters.png")
 ```
 ]
+
 
 ---
 
@@ -383,7 +408,6 @@ class: middle
 
 
 ### Most people will remember:
-
 
 .pull-left[
 - ONE main idea
@@ -413,7 +437,7 @@ Not: (even though you spent hours on it)
 ---
 ## Any Questions?
 
-Feel free to ask any questions now, or reach out to me after the talk via email _garrissm@wfu.edu_ or on github _github.com/smasongarrison_.
+Feel free to ask any questions now, or reach out to me after the talk via email _garrissm@wfu.edu_ or on github _github.com/smasongarrison_ or well, Greene 438
 
 ```{r qr_ds4p, echo=FALSE, fig.align = "center", out.width = "30%", caption="Scan the QR code to visit the Data Science for Psych website"}
 library(qrcode)
