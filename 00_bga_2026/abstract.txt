@@ -1,0 +1,14 @@
+Study 3
+TITLE: Maximum 50 words
+Temporal Changes in the Heritability of Longevity over the last 300 years: Preliminary Evidence from Extended Pedigrees with 176 Million Kinship pairs
+AUTHOR LIST: Authors need to be listed in the correct order. Make sure you have the first name, last name and middle initial, select to max. of 15, then add et al.
+S. Mason Garrison1 Michael D. Hunter2, Ken R. Smith3 & S. Alexandra Burt4
+AFFILIATIONS: Include department/group, University/Institute, City, State and Country e.g. Department of Psychology, University of Chicago, Chicago, Illinois, USA
+1.	Department of Psychology, Wake Forest University, Winston-Salem, North Carolina, USA
+2.	Department of Human Development and Family Studies, Pennsylvania State University, University Park, Pennsylvania, USA
+3.	Department of Family & Consumer Studies and Huntsman Cancer Institute, University of Utah, Salt Lake City, Utah, USA
+4.	Department of Psychology, Michigan State University, East Lansing, Michigan, USA
+KEYWORDS: Up to 5 key words.
+Temporal change, pedigree data, genetic effects, longevity, cohort effects
+ABSTRACT: Abstracts are limited to 250 words, including citations and references
+Studies 1 and 2 evaluated temporal influences on heritability estimates from meta-analytic and raw twin data. Despite employing different methods in non-overlapping samples with different types of twin data, both studies identified temporal changes in genetic estimates of at least .03 per decade. Although our confidence is buoyed by this constructive replication, the decline in heritability estimates could be specific to twin designs or to the most recent historical epoch. For Study 3, we thus sought to clarify whether the pattern of changing heritability estimates might extend to an extended pedigree sample with 5 generations of kinship pairs dating back three centuries: the Utah Population Database (UPDB). The UPDB includes 1,018,929 deceased individuals born between 1700 and 1925, with 176,348,110 unique kinship links amongst them. Because formal models for temporal moderation of heritability in pedigree data do not yet exist, we conducted an indirect test by evaluating whether kinship similarity varied by century of birth. The similarity of first-degree relatives varied minimally (but significantly, a consequence of the very large N) depending on their century of birth. In contrast, second- through fifth-degree relatives were substantially more similar when both were born in the 20th century, with correlations approximately double those of pairs born prior to the 20th century. Preliminary Falconer-inspired analyses showed the same pattern, estimating heritability at 22% in the 20th century but 27% prior to the 20th century. Such results offer strong additional support for temporal changes in heritability.
