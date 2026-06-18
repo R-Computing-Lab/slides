@@ -319,8 +319,9 @@ knitr::include_graphics("img/mtdna.png")
 --
 .pull-right-wide[
 
-```{r,echo=FALSE, out.width="95%", fig.align='center', fig.cap=""}
+```{r echo=FALSE, fig.align='center', fig.cap="", message=FALSE, warning=FALSE, out.width="95%"}
 library(tidyverse)
+library(DT)
 # read table"E:\Dropbox\Lab\Research\Presentations\slides\slides\00_bga_2026\results.csv"
 results <- read.csv("cor_cohort19flat.csv") %>%
   select(cohort_groupings,n_pairs, addRel_max, 
