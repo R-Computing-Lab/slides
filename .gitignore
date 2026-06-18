@@ -30,3 +30,6 @@ d01_welcome/d01_welcome.knit.md
 
 workshop/archive/*
 *.tmp.*
+00_bga_2026/draft.Rmd
+00_bga_2026/d00_slide_og.Rmd
+00_bga_2026/d00_slide_v1.Rmd
