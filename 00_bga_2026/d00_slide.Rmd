@@ -56,12 +56,12 @@ BibOptions(check.entries = FALSE, style = "markdown")
 
 ```{r echo=FALSE,out.width="20%",fig.align='center',fig.cap="QR code for these slides",fig.height=3}
 library(qrcode)
-code <- qr_code("https://r-computing-lab.github.io/slides/00_bga_2026/d00_slide.html#1")
+code <- qr_code("https://r-computing-lab.github.io/slides/00_bga_2026/d00_slide.html")
 plot(code)
 ```
 
 .footnote[.center[
-[r-computing-lab.github.io/slides/00_bga_2026/d00_slide](https://r-computing-lab.github.io/slides/00_bga_2026/d00_slide.html#1)
+[r-computing-lab.github.io/slides/00_bga_2026/d00_slide](https://r-computing-lab.github.io/slides/00_bga_2026/d00_slide.html)
 ]
 ]
 
@@ -102,6 +102,8 @@ plot(code)
 - The question is whether h² has been stable across time
   ]
 
+---
+
 # Why Historical Time Should Matter
 
 <!-- Slide 4: Theoretical motivation (1 min) -->
@@ -140,17 +142,17 @@ If the mortality environment changes, then the relative contributions of genetic
  
 .pull-left[
 
-.medi[Utah demographics from the Social Security Administration (1941 - 2023)]
+.small[Utah demographics from the Social Security Administration (1941 - 2023)]
 
-```{r, echo=FALSE, out.height="88%", fig.align='center'}
+```{r, echo=FALSE, out.height="88%", fig.align='right'}
 #knitr::include_graphics("img/world_line_usa.png")
 knitr::include_graphics("img/panel_UT_CI_continent_min_1900_croped.png")
 ```
 ]
 .pull-right[
-.medi[Swedish Demographics from Human Mortality Database (1750 - 2025)]
+.small[Swedish Demographics from Human Mortality Database (1750 - 2025)]
   
-```{r, echo=FALSE, out.height="88%", fig.align='center'}
+```{r, echo=FALSE, out.height="88%", fig.align='left'}
 #knitr::include_graphics("img/world_line_usa.png")
 knitr::include_graphics("img/panel_SWE_CI_continent_min_1750_croped.png")
 ```
@@ -163,14 +165,15 @@ knitr::include_graphics("img/panel_SWE_CI_continent_min_1750_croped.png")
 <!-- Slide 6: Theoretical motivation (1.5 min) -->
 <!-- Script: Let's zoom in on panel C, which I actually cut out of the previous figure... This shows the age-by-time shifts in mortality. Gains have accumulated unevenly across the lifespan. The most dramatic improvements have been in infancy and old age, with more modest gains in midlife. This is important because it means that the environmental context for genetic expression has changed differently at different ages.  -->
 
-## SSA data for the entire USA: (1900-2019)
+### SSA data for the entire USA: (1900-2019)
 
 .pull-left-wide[
-```{r, echo=FALSE, out.width="54%", fig.align='center'}
+```{r, echo=FALSE, out.width="88%", fig.align='center'}
 knitr::include_graphics("img/highlight_ages_usa.gif")
 ```
 ]
 --
+
 - Interpretation: Relative to a person born in 1900, what proportion of deaths were postponed?
 
 
@@ -204,7 +207,6 @@ crop_bottom_percent("img/Slide9.PNG", pct = 6,
 
 ---
 
-<!-- Slide 8: UPDB data structure (45 sec) -->
 
 background-image: url(img/Slide10_cropped.PNG)
 background-size: 94%
@@ -212,6 +214,8 @@ background-position: center
 background-repeat: no-repeat
 
 # The Data: What We Have
+
+<!-- Slide 8: UPDB data structure (45 sec) -->
 
 ```{r, echo=FALSE, out.width="95%", fig.align='center'}
 crop_bottom_percent("img/Slide10.PNG", pct = 6)
@@ -261,14 +265,14 @@ crop_bottom_percent("img/Slide12.PNG", pct = 6)
 
 .pull-left[
 - For this project, we were able to use a more manageable subset 
-  - **1,018,929*- deceased individuals
+  - **1,018,929** deceased individuals
   - Born 1700–1925
   - Pedigrees up to 17 generations deep
   - Linked via genealogical and vital records .small[(Skolnick et al., 1979)]
 
 ]
 .pull-right[
-- **176,348,110*- unique kinship pairs
+- **176,348,110** unique kinship pairs
   - 1st through 5th-degree and beyond
   - Multiple birth centuries represented
   - Same dataset as Burt, Garrison et al. (2025)
@@ -288,16 +292,16 @@ crop_bottom_percent("img/Slide12.PNG", pct = 6)
   - using **BGmisc**, our custom R package for extended behavior genetic analysis .small[(Garrison, Hunter, Lyu, Trattner, & Burt, 2024)],  
   - in combination with graph theory,  
   - and computed path-based relatedness estimates .small[(Hunter, Garrison et al., 2026)].
-]
---
-.pull-right[
-
 - For each dyad, we traced:
   - nuclear relatedness,
   - maternal vs. paternal lineage,
   - mtDNA, and potential shared environment.
+]
 
-- Go read the 35 page appendix of Burt, Garrison et al if you want more specifics...
+--
+.pull-right[
+
+- Go read the 35-page appendix of Burt, Garrison et al if you want more specifics...
 
 ```{r, echo=FALSE, out.width="55%", fig.align='center', fig.cap=""}
 knitr::include_graphics("img/mtdna.png")
@@ -329,6 +333,7 @@ knitr::include_graphics("img/mtdna.png")
 ]
 ---
 
+# The Phenotype and Similarity Metric
 
 <!-- Slide 14: Outcome and similarity metric (45 sec) -->
 <!-- Script: The phenotype is age at death, recorded for every individual in the analytic sample. For these preliminary analyses, we use a top-ten-percent longevity indicator and estimate tetrachoric correlations within kinship pairs. Those correlations are stratified by degree of relatedness and by historical birth-period pairing. This lets us ask whether relatives are more similar in longevity in one historical period than another, and whether that pattern depends on how closely they are related. -->
@@ -344,7 +349,7 @@ knitr::include_graphics("img/mtdna.png")
 
 .pull-right[
 
-- Similarity metric:
+- Similarity :
   - tetrachoric correlations .small[(Olsson, 1979; Fox, 2015)]
   - stratified by degree of relatedness
   - estimated separately by birth-period pairing
@@ -358,9 +363,9 @@ knitr::include_graphics("img/mtdna.png")
 <!-- Script: For first-degree relatives, we found minimal variation by birth century. The difference was statistically significant — but this is a consequence of the enormous sample size, not of substantive effect size. The practical pattern is flat. This is exactly what our theoretical model predicts: if A rises as C falls, the two changes partially offset each other in first-degree pairs. The signal is not here. -->
 
 
-.pull-left-narrow[
+.pull-left-narrow.medi[
 - Within-pair similarity for 1st-degree relatives (Burt, Garrison et al., 2025, Table S7):
-  - **Minimal*- variation across birth centuries
+  - **Minimal** variation across birth centuries
   - Practically trivial
 - Prediction:
   - If A↑ as C↓ over time, net change in 1st-degree similarity ≈ 0
@@ -415,7 +420,10 @@ results  %>%
            , rho_w, se_w, age_w, top10_w, mtdna_w) %>%
 DT::datatable(
   rownames = FALSE,
-  options = list(pageLength = 10, scrollX = TRUE)
+  
+  options = list(pageLength = 10, scrollX = TRUE,
+                   autoWidth = TRUE
+  )
 ) %>%
   formatRound(columns = c("rho_w", "se_w","top10_w","R"), digits = 3) %>%
    formatRound(columns = c("age_w","mtdna_w"), digits = 1)
@@ -433,15 +441,14 @@ DT::datatable(
 <!-- [FIGURE: Add results figure for 2nd-5th degree correlations by birth century] -->
 
 .pull-left[
-- *2nd–5th degree relative pairs*- (Burt, Garrison et al., 2025, Table S7):
-  - Born in the **20th century**: correlations **~2× higher*- than
+- **2nd–5th degree relative pairs**  (Burt, Garrison et al., 2025, Table S7):
+  - Born in the **20th century**: correlations **~2× higher**  than
   - pairs born **prior to the 20th century**
-
 ]
 --
 .pull-right[
 
-```{r, echo=FALSE, out.width="55%", fig.align='center', fig.cap=""}
+```{r, echo=FALSE, out.width="85%", fig.align='center', fig.cap=""}
 knitr::include_graphics("img\\cohortpis_all.png")
 ```
 ]
@@ -475,8 +482,8 @@ knitr::include_graphics("img\\cohortpis_all.png")
 <!-- Script: The central finding is that temporal change in kinship similarity extends beyond twins and beyond the most recent historical period. In these extended pedigrees, the clearest signal appears among distant relatives, where genetic relatedness is preserved but shared household context is much weaker. That pattern is consistent with the idea that the genetic contribution to longevity changed across historical mortality regimes. At the same time, the results are still preliminary because the current analysis is indirect. The field needs formal models that can estimate temporal moderation of genetic and environmental variance directly in extended pedigrees. -->
 
 .pull-left[
-- Temporal change in kinship similarity seen in **extended pedigree data*- going back **300 years**
-- Signal is in **distant kin*- — specifically implicates genetic influence
+- Temporal change in kinship similarity seen in **extended pedigree data**  going back **300 years**
+- Signal is in **distant kin**  — specifically implicates genetic influence
   - This pattern is consistent with changing genetic influence across mortality regimes
   ]
 --
@@ -498,19 +505,18 @@ knitr::include_graphics("img\\cohortpis_all.png")
 - **Formal modeling**: 
   - multigenerational pedigree model for temporal moderation of A, D, C, and E
   - Linear, quadratic, and cubic forms
-  
-- **Validate by simulation**: confirm sensitivity and specificity across effect sizes
-- **Apply in the full UPDB**: formal test of the 300-year heritability trajectory for longevity
-- **Extend to related aging outcomes**: Type II diabetes, Alzheimer's Disease, Parkinson's Disease
+- **Validate by simulation**...
+- **Apply in the full UPDB**...
+- **Extend to related aging outcomes**...
 
 ---
 
 # Acknowledgements
 
-- **Utah Population Database*- (University of Utah / Huntsman Cancer Institute)
+- **Utah Population Database**  (University of Utah / Huntsman Cancer Institute)
 - **Co-authors**: Michael D. Hunter, Ken R. Smith, S. Alexandra Burt
 - **R packages**: `BGmisc` (Garrison, Hunter, Lyu, Trattner, & Burt, 2024), `ggpedigree` (Garrison, 2025)
-- **Human Mortality Database*- for theoretical illustration figures
+- **Human Mortality Database**  for theoretical illustration figures
 
 ---
 

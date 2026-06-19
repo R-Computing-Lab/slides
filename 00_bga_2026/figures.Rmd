@@ -116,7 +116,7 @@ savep <- ggPhenotypeByDegree(
     coord_cartesian(ylim = c(NA, .20))
 
 savep
-ggsave(savep,filename = "img\\cohortpis_1st.png", width = 10, height = 6, dpi = 300)
+ggsave(savep,filename = "img\\cohortpis_1st.png", width = 5, height = 6, dpi = 300)
 
 savep <- ggPhenotypeByDegree(
   df = results,
@@ -139,5 +139,5 @@ savep <- ggPhenotypeByDegree(
 ) # +
  #   coord_cartesian(ylim = c(0, .15))
 savep
-ggsave(savep,filename = "img\\cohortpis_all.png", width = 10, height = 6, dpi = 300)
+ggsave(savep,filename = "img\\cohortpis_all.png", width = 5, height = 6, dpi = 300)
 ```
