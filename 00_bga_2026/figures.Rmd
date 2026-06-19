@@ -51,58 +51,88 @@ library(ggpedigree)
 library(tidyverse)
 
 results <- read.csv("cor_cohort19flat.csv") %>%
-  select(cohort_groupings,n_pairs, addRel_max,  addRel_min, 
-          mtdna, 
+  select(cohort_groupings,n_pairs, addRel_max, addRel_min,
+         mtdna, 
          cnu, 
          age_k1_meanFunction, 
          USA_flag_10_k1_meanFunction,
          USA_flag_10_polychorFunction_rho, 
-         USA_flag_10_polychorFunction_se)  %>%
+         USA_flag_10_polychorFunction_se) %>%
   filter(cohort_groupings %in% c(1919,1818)) %>%
-  mutate(cohort_groupings = as.character(cohort_groupings),
-         USA_flag_10_polychorFunction_rho_LL = USA_flag_10_polychorFunction_rho - 1.96 * USA_flag_10_polychorFunction_se,
-         USA_flag_10_polychorFunction_rho_UL = USA_flag_10_polychorFunction_rho + 1.96 * USA_flag_10_polychorFunction_se)
+  rename(cohort = cohort_groupings,
+         n_pairs = n_pairs,
+         mtdna = mtdna, 
+         cnu = cnu, 
+         age = age_k1_meanFunction, 
+         top10 = USA_flag_10_k1_meanFunction,
+         rho = USA_flag_10_polychorFunction_rho, 
+         se = USA_flag_10_polychorFunction_se) %>%
+# reverse order of dataset
+  mutate(cohort = ifelse(cohort == 1919, "20th",
+                         ifelse(cohort == 1818, "Pre-20th", cohort)),
+            z = atanh(rho))  %>%
+    group_by(cohort, addRel_max,cnu) %>%
+  summarise(
+    addRel_max = first(addRel_max),
+    addRel_min = first(addRel_min),
+    cnu = first(cnu),
+    n_pairs_total = sum(n_pairs, na.rm = TRUE),
+    z_w = weighted.mean(z, w = n_pairs - 3, na.rm = TRUE),
+    rho_w = tanh(z_w),
+    age_w = weighted.mean(age, w = n_pairs, na.rm = TRUE),
+    top10_w = weighted.mean(top10, w = n_pairs, na.rm = TRUE),
+    se_w = sqrt(1 / sum(n_pairs - 3, na.rm = TRUE)),
+    mtdna_w = weighted.mean(mtdna, w = n_pairs, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+         rho_LL = rho_w - 1.96 *se_w*sqrt(2),
+         rho_UL = rho_w + 1.96 * se_w*sqrt(2),
+        mtdna = 0,
+        n_pairs = n_pairs_total#,
+        #cnu = 0
+         )
          
 
 savep <- ggPhenotypeByDegree(
   df = results,
-  y_var = "USA_flag_10_polychorFunction_rho",
+  y_var = "rho_w",
  # y_se = "USA_flag_10_polychorFunction_se",
-  y_ci_lb = "USA_flag_10_polychorFunction_rho_LL", #"Has_Dementia_phi_LL",
-  y_ci_ub = "USA_flag_10_polychorFunction_rho_UL", #"Has_Dementia_phi_UL",
+  y_ci_lb = "rho_LL", #"Has_Dementia_phi_LL",
+  y_ci_ub = "rho_UL", #"Has_Dementia_phi_UL",
   config = list(
-    use_only_classic_kin = FALSE,
+    use_only_classic_kin = T,
     drop_classic_kin = FALSE,
     group_by_kin = TRUE,
     use_relative_degree = T,
     drop_non_classic_sibs = T,
-   # filter_degree_min = 1,
+    filter_degree_min = 0.5,
     filter_degree_max = 4,
-    grouping_column = "cohort_groupings",
+    grouping_column = "cohort",
     filter_n_pairs = 10,
     annotate_include = FALSE
   )
 )  +
-    coord_cartesian(ylim = c(NA, 1))
+    coord_cartesian(ylim = c(NA, .20))
 
 savep
 ggsave(savep,filename = "img\\cohortpis_1st.png", width = 10, height = 6, dpi = 300)
 
 savep <- ggPhenotypeByDegree(
   df = results,
-  y_var = "USA_flag_10_polychorFunction_rho",
+  y_var = "rho_w",
  # y_se = "USA_flag_10_polychorFunction_se",
-  y_ci_lb = "USA_flag_10_polychorFunction_rho_LL", #"Has_Dementia_phi_LL",
-  y_ci_ub = "USA_flag_10_polychorFunction_rho_UL", #"Has_Dementia_phi_UL",
+  y_ci_lb = "rho_LL", #"Has_Dementia_phi_LL",
+  y_ci_ub = "rho_UL", #"Has_Dementia_phi_UL",
   config = list(
-    use_only_classic_kin = T,
+    use_only_classic_kin = F,
     drop_classic_kin = FALSE,
     group_by_kin = TRUE,
     use_relative_degree = F,
     drop_non_classic_sibs = FALSE,
     filter_degree_min = 1,
-    filter_degree_max = 7,
-    grouping_column = "cohort_groupings",
+    filter_degree_max = 8,
+    grouping_column = "cohort",
     filter_n_pairs = 10,
     annotate_include = FALSE
   )
