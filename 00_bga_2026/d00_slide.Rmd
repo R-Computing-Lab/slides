@@ -40,7 +40,7 @@ BibOptions(check.entries = FALSE, style = "markdown")
 ```
 
 
-# Temporal Changes in the Heritability of Longevity
+## Temporal Changes in the Heritability of Longevity
 ### Evidence from the Utah Population Database
 
 - S. Mason Garrison (Wake Forest University)
@@ -86,20 +86,18 @@ plot(code)
 # The Usual Assumption: h² Is Stable
 
 .pull-left[
-
 - Longevity is heritable
-
   - Twin estimates: h² ≈ 20–25% .small[(e.g., Herskind et al., 1996; McGue et al., 1993)]
   - Pedigree estimates: h² ≈ 25% + mt² ≈ 5% .small[(Burt, Garrison, et al 2025)]
   - Correcting for extrinsic mortality:  h² ≈ 50% .small[(Shenhar et al., 2026)]
-    ]
-
+]
+--
 .pull-right[
 
 - But most estimates treat h² as time-invariant
-- That assumption is strong for a trait measured across historical cohorts
+  - That assumption is strong for a trait measured across historical cohorts
 - The key question is not whether longevity is heritable
-- The question is whether h² has been stable across time
+  - The question is whether h² has been stable across time
   ]
 
 ---
@@ -121,9 +119,9 @@ plot(code)
 .pull-right[
 
 -  h² is a population-specific variance ratio
--  It depends on the environmental context in which the trait is measured
+  -  It depends on the environmental context in which the trait is measured
 -  If environmental risk changes, genetic variance may become more or less visible
--  Longevity should therefore be historically contingent
+  -  Longevity should therefore be historically contingent
   ]
 
 ---
@@ -150,7 +148,7 @@ knitr::include_graphics("img/panel_UT_CI_continent_min_1900_croped.png")
 ```
 ]
 .pull-right[
-.small[Swedish Demographics from Human Mortality Database (1750 - 2025)]
+.small[Swedish demographics from Human Mortality Database (1750 - 2025)]
   
 ```{r, echo=FALSE, out.height="88%", fig.align='left'}
 #knitr::include_graphics("img/world_line_usa.png")
@@ -168,7 +166,7 @@ knitr::include_graphics("img/panel_SWE_CI_continent_min_1750_croped.png")
 ### SSA data for the entire USA: (1900-2019)
 
 .pull-left-wide[
-```{r, echo=FALSE, out.width="88%", fig.align='center'}
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
 knitr::include_graphics("img/highlight_ages_usa.gif")
 ```
 ]
@@ -272,10 +270,10 @@ crop_bottom_percent("img/Slide12.PNG", pct = 6)
 
 ]
 .pull-right[
-- **176,348,110** unique kinship pairs
+- More than **176,348,110** unique kinship pairs
   - 1st through 5th-degree and beyond
   - Multiple birth centuries represented
-  - Same dataset as Burt, Garrison et al. (2025)
+  - .small[(Same dataset as Burt, Garrison et al. (2025)]
 
 ]
 
@@ -301,11 +299,14 @@ crop_bottom_percent("img/Slide12.PNG", pct = 6)
 --
 .pull-right[
 
-- Go read the 35-page appendix of Burt, Garrison et al if you want more specifics...
 
 ```{r, echo=FALSE, out.width="55%", fig.align='center', fig.cap=""}
 knitr::include_graphics("img/mtdna.png")
+knitr::include_graphics("img/patrilinefig.png")
 ```
+- Go read the 35-page appendix of Burt, Garrison et al if you want more specifics...
+
+
 ]
 
 
@@ -317,19 +318,21 @@ knitr::include_graphics("img/mtdna.png")
 <!-- Script: Because formal models for temporal moderation of heritability in pedigree data don't yet exist, what we have is an indirect test. We split kinship pairs by whether both members were born in the 20th century (1900 or later) versus both born prior, then ask: does within-pair similarity differ by birth century, and does that pattern vary by degree of relatedness in the way we'd expect if heritability itself were changing? -->
 
 .pull-left[
-- **The question**: 
-  - does within-pair similarity in longevity differ by birth century?
+- **The question**: does within-pair similarity in longevity differ by birth century?
 -  Birth-period contrast:
   - both members born in the 20th century
   - both members born before the 20th century
-    ]
-
-.pull-right[
 - Kinship contrast:
  - 1st-degree relatives share A and shared context (C etc)
  - 2nd–5th degree relatives share A, not shared household
-- Key test:
-  - If h² changes over time, distant kin should show it most clearly
+    ]
+
+.pull-right[
+- Key test: If h² changes over time, distant kin should show it most clearly
+- We expect to see a similar pattern that we found in Burt, Garrison et al. (2025)
+```{r, echo=FALSE, out.width="85%", fig.align='center', fig.cap=""}
+knitr::include_graphics("img/mtdna.png")
+```
 ]
 ---
 
@@ -440,15 +443,15 @@ DT::datatable(
 
 <!-- [FIGURE: Add results figure for 2nd-5th degree correlations by birth century] -->
 
-.pull-left[
+.pull-left-narrow[
 - **2nd–5th degree relative pairs**  (Burt, Garrison et al., 2025, Table S7):
   - Born in the **20th century**: correlations **~2× higher**  than
   - pairs born **prior to the 20th century**
 ]
 --
-.pull-right[
+.pull-right-wide[
 
-```{r, echo=FALSE, out.width="85%", fig.align='center', fig.cap=""}
+```{r, echo=FALSE, out.width="55%", fig.align='center', fig.cap=""}
 knitr::include_graphics("img\\cohortpis_all.png")
 ```
 ]
@@ -514,6 +517,7 @@ knitr::include_graphics("img\\cohortpis_all.png")
 # Acknowledgements
 
 - **Utah Population Database**  (University of Utah / Huntsman Cancer Institute)
+- **Funding**: National Institute on Aging [RF1-AG073189]
 - **Co-authors**: Michael D. Hunter, Ken R. Smith, S. Alexandra Burt
 - **R packages**: `BGmisc` (Garrison, Hunter, Lyu, Trattner, & Burt, 2024), `ggpedigree` (Garrison, 2025)
 - **Human Mortality Database**  for theoretical illustration figures
