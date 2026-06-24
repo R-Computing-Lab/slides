@@ -88,7 +88,7 @@ plot(code)
 .pull-left[
 - Longevity is heritable
   - Twin estimates: h² ≈ 20–25% .small[(e.g., Herskind et al., 1996; McGue et al., 1993)]
-  - Pedigree estimates: h² ≈ 25% + mt² ≈ 5% .small[(Burt, Garrison, et al 2025)]
+  - Pedigree estimates: h² ≈ 25% + mt² ≈ 5% .small[(Burt, Garrison, et al 2025), ebiomedicine]
   - Correcting for extrinsic mortality:  h² ≈ 50% .small[(Shenhar et al., 2026)]
 ]
 --
@@ -301,7 +301,7 @@ crop_bottom_percent("img/Slide12.PNG", pct = 6)
 
 
 ```{r, echo=FALSE, out.width="55%", fig.align='center', fig.cap=""}
-knitr::include_graphics("img/mtdna.png")
+#knitr::include_graphics("img/mtdna.png")
 knitr::include_graphics("img/patrilinefig.png")
 ```
 - Go read the 35-page appendix of Burt, Garrison et al if you want more specifics...
@@ -330,7 +330,7 @@ knitr::include_graphics("img/patrilinefig.png")
 .pull-right[
 - Key test: If h² changes over time, distant kin should show it most clearly
 - We expect to see a similar pattern that we found in Burt, Garrison et al. (2025)
-```{r, echo=FALSE, out.width="85%", fig.align='center', fig.cap=""}
+```{r, echo=FALSE, out.width="45%", fig.align='center', fig.cap=""}
 knitr::include_graphics("img/mtdna.png")
 ```
 ]
